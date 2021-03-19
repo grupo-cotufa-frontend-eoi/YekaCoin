@@ -1,4 +1,4 @@
-# yekacoin
+# YekaCoin - Página para consultar información sobre criptomonedas
 
 ## Project setup
 ```
