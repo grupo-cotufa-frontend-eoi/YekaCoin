@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-between items-center px-1 py-1  md:px-2 md:py-2 border-b-2 border-darkBlue shadow-xl">
+  <header class="flex justify-between h-24 items-center px-1 py-1 md:px-2 md:py-2 border-b-2 border-darkBlue shadow-xl">
     <!-- Contenedor de la imagen -->
     <div class="flex items-center px-1 py-1 h-28 w-28 m-2">
        <!-- Que la imagen se adapte al tamaño del contenedor -->
