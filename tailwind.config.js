@@ -5,10 +5,17 @@ module.exports = {
   darkMode: false, // Or 'media' or 'class'
   theme: {
     extend: {
+      boxShadow: {
+        // DEFAULT: "10px 10px 0px #52606e,- 10px - 10px 0px #ffffff",
+      },
       colors: {
-        primary: colors.amber, // Primary-50
-        secondary: colors.orange, // Secondary-400
-        blue: colors.cyan, // LightBlue-300 o 400/500 para el darkBlue
+        primary: "#FFECD0",
+        secondary: "#FFE2B6",
+        lightBlue: "#BEE0FF",
+        darkBlue: "#94CBFF",
+        orange: "#DA7500",
+        marine: "#2192FB",
+        gray: colors.coolGray,
       },
     },
   },
