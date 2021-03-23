@@ -17,8 +17,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     "vue/max-len": ["error", {
-      "code": 360,
-      "template": 360,
+      "code": 600,
+      "template": 600,
       "tabWidth": 2,
       "comments": 0,
       "ignorePattern": "",

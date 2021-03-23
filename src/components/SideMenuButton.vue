@@ -1,5 +1,5 @@
 <template>
-  <button class="px-3 py-1 m-2 text-lg border-2 border-darkBlue bg-secondary text-darkBlue font-semibold rounded-2xl  transition-colors ease-in duration-150  hover:text-marine hover:bg-primary hover:border-marine shadow-lg">
+  <button class="h-10 w-10 p-1 my-2  bg-primary text-darkBlue font-semibold rounded-full  transition-colors ease-in duration-150  hover:text-orange hover:bg-darkBlue hover:border-marine shadow-md">
     <slot></slot>
   </button>
 </template>
