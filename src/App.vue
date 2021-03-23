@@ -1,9 +1,9 @@
 <template>
-  <div class=" w-auto h-auto bg-lightBlue ">
+  <div class="h-screen">
     <Header></Header>
-    <main  class="inline-flex">
-        <SideMenu></SideMenu>
-        <!-- <ContentSection></ContentSection> -->
+    <main class="flex justify-center h-full w-full">
+      <SideMenu></SideMenu>
+      <ContentSection></ContentSection>
     </main>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   components: {
     Header,
     SideMenu,
-    // ContentSection,
+    ContentSection,
   },
 };
 </script>
@@ -24,5 +24,4 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 </style>
