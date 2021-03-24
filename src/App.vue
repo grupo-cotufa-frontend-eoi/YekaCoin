@@ -3,14 +3,14 @@
     <Header></Header>
     <main class="flex justify-center h-full w-full">
       <SideMenu></SideMenu>
-      <ContentSection></ContentSection>
+      <ContentSection />
     </main>
   </div>
 </template>
 <script>
 import Header from "../src/components/Header";
 import SideMenu from "../src/components/SideMenu";
-import ContentSection from "../src/components/ContentSection";
+import ContentSection from "./components/ContentSection.vue";
 export default {
   name: "App",
   components: {
@@ -20,7 +20,8 @@ export default {
   },
 };
 </script>
-<style lang="postcss">
+<style
+    ContentSectionlang="postcss">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
