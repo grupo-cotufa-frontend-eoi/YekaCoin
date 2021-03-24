@@ -29,4 +29,12 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap');
+html {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 1.2rem;
+}
+body {
+  font-size: 1.5rem;
+}
 </style>
