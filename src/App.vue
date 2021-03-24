@@ -1,10 +1,15 @@
 <template>
-  <div class=" w-auto h-auto bg-lightBlue ">
-    <Header></Header>
-    <main  class="inline-flex">
-        <SideMenu></SideMenu>
-        <!-- <ContentSection></ContentSection> -->
+  <div>
+    <Header/>
+    <main class="flex">
+        <!-- Dentro del side menu están todas las rutas -->
+        <SideMenu/>
+        <!-- Dentro de content section es donde está todo el contenido dinámico -->
+        <ContentSection>
+          <router-view/>
+        </ContentSection>
     </main>
+    <!-- Aqui si quisieramos podriamos meter un footer -->
   </div>
 </template>
 <script>
@@ -16,7 +21,7 @@ export default {
   components: {
     Header,
     SideMenu,
-    // ContentSection,
+    ContentSection,
   },
 };
 </script>
@@ -24,5 +29,4 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 </style>
