@@ -3,7 +3,7 @@
     class="container mx-auto flex-col flex justify-center items-center h-full">
     <div v-for="(coin,index) of coins"
     :key="index"
-    class="w-10/12 h-8 bg-white h-20 rounded-md flex justify-between px-6 mb-6">
+    class="w-10/12  bg-white h-20 rounded-md flex justify-between px-6 mb-6">
       <div class="flex items-center h-full">
         <img
           class="h-12 w-12 mr-2"
