@@ -44,9 +44,9 @@ export default {
 </script>
 <style lang="postcss">
 .side-menu {
-  @apply flex flex-col m-8
+  @apply flex-col m-8
        bg-secondary border-darkBlue
          border-2 rounded-xl shadow-lg
-         md:px-4 md:py-7 max-h-64 sm:flex;
+         md:px-4 md:py-7 max-h-64 sm:flex hidden;
 }
 </style>
