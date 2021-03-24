@@ -2,7 +2,7 @@
 
 <div class="w-full flex flex-col justify-center text-center">
   <h1>News section</h1>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <a href="#" class="news-box">1</a>
     <a href="#" class="news-box">2</a>
     <a href="#" class="news-box">3</a>
