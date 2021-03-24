@@ -1,28 +1,28 @@
 <template>
   <div
-    class="container mx-auto flex-col flex justify-center items-center h-full">
+    class="cards">
     <div v-for="(coin,index) of coins"
     :key="index"
-    class="w-10/12  bg-white h-20 rounded-md flex justify-between px-6 mb-6">
-      <div class="flex items-center h-full">
+    class="card-coin">
+      <div class="card-content">
         <img
-          class="h-12 w-12 mr-2"
+          class="card-content__img"
           :src=coin.iconUrl
           alt=""
         />
-        <span class="font-semibold text-xl">{{coin.name}}</span>
+        <span class="card-content__text">{{coin.name}}</span>
       </div>
-      <div class="flex items-center h-full">
-        <span class="font-semibold text-xl uppercase">{{coin.symbol}}</span>
+      <div class="card-content">
+        <span class="card-content__text uppercase">{{coin.symbol}}</span>
       </div>
-      <div class="flex items-center h-full">
-        <span class="font-semibold text-xl uppercase">{{coin.uuid}}</span>
+      <div class="card-content">
+        <span class="card-content__text uppercase">{{coin.uuid}}</span>
       </div>
-      <div class="flex items-center h-full">
-        <span class="font-semibold text-xl uppercase">+1,12%</span>
+      <div class="card-content">
+        <span class="card-content__text uppercase">+1,12%</span>
       </div>
-      <div class="flex items-center h-full">
-        <button class="bg-marine px-6 py-2 rounded-md">
+      <div class="card-content">
+        <button class="card-content__btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-star"
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     async ver () {
-      const url = await fetch("https://api.coinranking.com/v2/coins?limit=5");
+      const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
       const vista = await url.json();
       this.coins = vista.data.coins;
     },
@@ -68,5 +68,27 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
+.cards {
+  @apply container mx-auto flex-col flex justify-center items-center h-full;
+}
+.card-coin{
+  @apply w-10/12 bg-white h-20 rounded-md flex justify-between px-6 mb-6
+}
+
+.card-content{
+  @apply flex items-center h-full;
+}
+
+.card-content__img{
+  @apply h-12 w-12 mr-2;
+}
+
+.card-content__text{
+  @apply font-semibold text-xl;
+}
+
+.card-content__btn{
+  @apply bg-marine px-6 py-2 rounded-md;
+}
 </style>

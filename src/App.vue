@@ -1,10 +1,13 @@
 <template>
-  <div class="h-screen">
-    <Header></Header>
-    <main class="flex justify-center h-full w-full">
-      <SideMenu></SideMenu>
-      <ContentSection />
+  <div>
+    <Header/>
+    <main class="flex">
+        <!-- Dentro del side menu están todas las rutas -->
+        <SideMenu/>
+        <!-- Dentro de content section es donde está todo el contenido dinámico -->
+        <ContentSection></ContentSection>
     </main>
+    <!-- Aqui si quisieramos podriamos meter un footer -->
   </div>
 </template>
 <script>
@@ -25,4 +28,14 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap');
+html {
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 1.2rem;
+}
+body {
+  font-size: 1.5rem;
+}
+
 </style>
