@@ -45,23 +45,20 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
   name: "Card-coins",
-  beforeMount () {
-    this.ver();
-  },
-
-  data () {
-    return {
-      coins: [],
-    };
-  },
   methods: {
-    async ver () {
-      const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
-      const vista = await url.json();
-      this.coins = vista.data.coins;
+    ...mapActions(["fetchCoinsData"]),
+    updateCoins() {
+      this.fetchCoinsData();
     },
+  },
+  computed: {
+    ...mapState(["coins"]),
+  },
+  beforeMount () {
+    this.updateCoins();
   },
 };
 </script>
