@@ -15,7 +15,7 @@ export default {
 .logo-letters {
   @apply m-2 text-2xl  font-extrabold;
 }
-span {
+h1 span {
   font-family: 'Press Start 2P', cursive;
 }
 </style>

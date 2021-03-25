@@ -23,8 +23,7 @@ export default {
   },
 };
 </script>
-<style
-    ContentSectionlang="postcss">
+<style lang="postcss">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
