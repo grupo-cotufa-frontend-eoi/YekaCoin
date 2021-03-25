@@ -17,10 +17,11 @@
           <span class="card-content__text uppercase">{{coin.uuid}}</span>
         </div>
         <div class="card-content">
-          <span class="card-content__text uppercase">+1,12%</span>
+          <span class="card-content__text uppercase">hola</span>
         </div>
         <div class="card-content">
-          <button class="card-content__btn">
+          <button @click="favorito(coin.uuid)"
+          class="card-content__btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-star"
@@ -45,23 +46,24 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
   name: "Card-coins",
-  beforeMount () {
-    this.ver();
-  },
-
-  data () {
-    return {
-      coins: [],
-    };
-  },
   methods: {
-    async ver () {
-      const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
-      const vista = await url.json();
-      this.coins = vista.data.coins;
+    ...mapActions(["fetchCoinsData", "favorito", "saveFavorite"]),
+    updateCoins () {
+      this.fetchCoinsData();
+      this.saveFavorite();
     },
+    addFavorite () {
+      console.log("hola mundo");
+    },
+  },
+  computed: {
+    ...mapState(["coins", "favorite"]),
+  },
+  beforeMount () {
+    this.updateCoins();
   },
 };
 </script>
