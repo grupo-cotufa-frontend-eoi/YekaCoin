@@ -10,7 +10,10 @@ export default {
   name: "Coin",
   data() {
     return {
-      coin: this.getCoin(),
+      coin: {},
+      actualPrice: 0,
+      coinSparklines: [],
+      labels: [],
     };
   },
   methods: {
@@ -20,57 +23,56 @@ export default {
       const myChart = new Chart(canvas, {
         type: "line",
         data: {
-          labels: ["#1", "#2", "#3", "#4", "#5", "#6", "#7", "#8"],
+          labels: this.labels,
           datasets: [{
-            data: [2520000, 3800000, 4970000, 6840000, 6880000, 7690000, 10260000, 11990000],
-            label: "Juego de Tronos",
-            backgroundColor: "#3e95cd",
-            borderColor: "#3e95cd",
+            data: this.coinSparklines,
+            label: `Current value: ${this.actualPrice}`,
+            backgroundColor: "#DA7500",
+            borderColor: "#FFE2B6",
             fill: false,
-          }, {
-            data: [13340000, 17350000, 19950000, 17640000, 13620000, 12760000, 10320000, 8690000],
-            label: "House",
-            backgroundColor: "#8e5ea2",
-            borderColor: "#8e5ea2",
-            fill: false,
-          }, {
-            data: [5220000, 8970000, 9460000, 12480000, 10980000, 8600000],
-            label: "Los Soprano",
-            backgroundColor: "#3cba9f",
-            borderColor: "#3cba9f",
-            fill: false,
-          }],
+          },
+          ],
         },
         options: {
+          responsive: true,
           scales: {
             xAxes: [{
               scaleLabel: {
                 display: true,
-                labelString: "Temporadas",
+                labelString: "Hour",
               },
             }],
             yAxes: [{
               scaleLabel: {
                 display: true,
-                labelString: "Espectadores",
+                labelString: "Price",
               },
             }],
           },
           title: {
             display: true,
-            text: "Nielsen Ratings",
+            text: `${this.coin.name} (${this.coin.symbol})`,
           },
         },
       });
     },
-    setCoin(id) {
-      // This.coin = {{$route.params.id}};
+    setData(id) {
+      this.coins.forEach((coin) => {
+        if (coin.uuid === id) { this.coin = coin; }
+      });
+      const sparklines = [...this.coin.sparkline];
+      this.coinSparklines = sparklines.map((spark) => +parseFloat(spark).toFixed(2));
+      const reduceAmount = this.coinSparklines.length - 24;
+      this.coinSparklines = this.coinSparklines.slice(reduceAmount);
+      this.labels = this.coinSparklines.map((spark, index) => index.toString());
+      this.actualPrice = parseFloat(this.coin.price).toFixed(2);
     },
   },
   computed: {
     ...mapState(["id", "coins"]),
   },
   mounted () {
+    this.setData(this.id);
     this.buildChart();
   },
 };

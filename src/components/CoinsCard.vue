@@ -1,7 +1,7 @@
 <template>
-  <div
-    class="cards">
-    <router-link :to="{name: 'Coin', params: {id : coin.uuid, nameCoin: coin.name}}" class="card-coin" v-for="coin of coins" :key="coin.uuid" @click="filterCoinID(coin.uuid)">
+  <div class="cards">
+    <router-link :to="{name: 'Coin', params: {id : coin.uuid, nameCoin: coin.name}}" v-for="coin of coins" :key="coin.uuid">
+      <div class="card-coin" @click="filterCoinID(coin.uuid)">
         <div class="card-content">
           <img
             class="card-content__img"
@@ -25,6 +25,7 @@
             <!-- <i class="fas fa-star"></i> -->
           </button>
         </div>
+      </div>
     </router-link>
   </div>
 </template>
@@ -55,11 +56,13 @@ export default {
   @apply container mx-auto flex-col flex justify-center items-center h-full;
 }
 .card-coin{
-  @apply w-10/12 h-20 border-2 border-marine bg-white hover:bg-primary  rounded-md flex justify-between px-6 mb-6 shadow-lg ;
+  @apply flex justify-between mb-6 px-6 h-20 w-full
+       border-marine bg-white hover:bg-primary
+         border-2 rounded-md shadow-lg ;
 }
 
 .card-content{
-  @apply flex items-center h-full;
+  @apply flex items-center h-full mx-10;
 }
 
 .card-content__img{
