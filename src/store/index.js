@@ -24,16 +24,24 @@ export default new Vuex.Store({
         state.favorite = JSON.parse(localStorage.getItem("favorite"));
       }
     },
+    removeFavorite (state, idcoin) {
+      const newArray = state.favorite.filter((coin) => coin !== idcoin);
+      state.favorite = [...newArray];
+      localStorage.setItem("favorite", JSON.stringify(state.favorite));
+    },
   },
   actions: {
     fetchCoinsData (context) {
       context.commit("getCoins");
     },
-    favorito (context, idcoin) {
+    addFavorite (context, idcoin) {
       context.commit("addFavorite", idcoin);
     },
-    saveFavorite (context) {
-      context.commit("agregarFavorito");
+    saveFavorite (context, idCoins) {
+      context.commit("agregarFavorito", idCoins);
+    },
+    deleteFavorite (context, idCoins) {
+      context.commit("removeFavorite", idCoins);
     },
   },
   modules: {

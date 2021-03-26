@@ -20,25 +20,10 @@
           <span class="card-content__text uppercase">hola</span>
         </div>
         <div class="card-content">
-          <button @click="favorito(coin.uuid)"
+          <button @click.prevent="updateFavorite(coin.uuid)"
           class="card-content__btn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-star"
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#000000"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"
-              />
-            </svg>
+            <i v-if="favorite.includes(coin.uuid)" class="fas fa-star active"></i>
+            <i v-else class="far fa-star"></i>
           </button>
         </div>
     </router-link>
@@ -50,17 +35,21 @@ import { mapActions, mapState } from "vuex";
 export default {
   name: "Card-coins",
   methods: {
-    ...mapActions(["fetchCoinsData", "favorito", "saveFavorite"]),
+    ...mapActions(["fetchCoinsData", "addFavorite", "saveFavorite", "deleteFavorite"]),
     updateCoins () {
       this.fetchCoinsData();
       this.saveFavorite();
     },
-    addFavorite () {
-      console.log("hola mundo");
+    updateFavorite (id) {
+      if (this.favorite.includes(id)) this.deleteFavorite(id);
+      else this.addFavorite(id);
     },
   },
   computed: {
     ...mapState(["coins", "favorite"]),
+    getCoin () {
+      return this.coins.includes;
+    },
   },
   beforeMount () {
     this.updateCoins();
@@ -90,5 +79,9 @@ export default {
 
 .card-content__btn{
   @apply bg-marine px-6 py-2 rounded-md;
+}
+
+.active{
+  @apply text-orange
 }
 </style>
