@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     coins: [],
+    id: "",
   },
   mutations: {
     async getCoins(state) {
@@ -13,10 +14,16 @@ export default new Vuex.Store({
       const vista = await url.json();
       state.coins = vista.data.coins;
     },
+    setID(state, id) {
+      state.id = id;
+    },
   },
   actions: {
     fetchCoinsData(context) {
       context.commit("getCoins");
+    },
+    filterCoinID(context, id) {
+      context.commit("setID", id);
     },
   },
   getters: {
