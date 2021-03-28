@@ -1,5 +1,4 @@
 <template>
-  <!-- <h1>{{$route.params.id}}</h1> -->
   <canvas id="chart" width="1000" height="500">Your navigator doesn't allow graphics</canvas>
 </template>
 
@@ -57,13 +56,19 @@ export default {
       });
     },
     setData(id) {
+      // Guardamos la moneda a graficar
       this.coins.forEach((coin) => {
         if (coin.uuid === id) { this.coin = coin; }
       });
+      // Guardamos los valores de la moneda
       const sparklines = [...this.coin.sparkline];
       this.coinSparklines = sparklines.map((spark) => +parseFloat(spark).toFixed(2));
+
+      // Reducimos los valores obtenidos a formato 24 h
       const reduceAmount = this.coinSparklines.length - 24;
       this.coinSparklines = this.coinSparklines.slice(reduceAmount);
+
+      // Seteamos valores de label y actual price
       this.labels = this.coinSparklines.map((spark, index) => index.toString());
       this.actualPrice = parseFloat(this.coin.price).toFixed(2);
     },
