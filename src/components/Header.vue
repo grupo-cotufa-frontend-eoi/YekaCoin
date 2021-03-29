@@ -38,4 +38,15 @@ export default {
   @apply flex items-center
          px-1 py-1 h-28 w-28 m-2;
 }
+.logo-container:hover {
+  animation: sideMove 3s;
+}
+@keyframes sideMove {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(100%);
+  }
+}
 </style>

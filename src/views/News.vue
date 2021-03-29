@@ -5,7 +5,7 @@
       <div class="article-title">
         {{item.title}}
       </div>
-      <div class="article-img">
+      <div>
         <img class="card-content__img" :src=item.image_url alt="">
       </div>
       <div class="article-content">
@@ -47,6 +47,7 @@ export default {
 }
 .article {
   @apply w-11/12 flex flex-col justify-center align-middle h-auto border-4 border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg;
+  animation: fadeInUp 3s;
 }
 .article-title {
   @apply text-primary;
@@ -58,12 +59,12 @@ export default {
   @apply rounded-xl;
 }
 .article-content {
-  @apply flex text-base mt-4 rounded-xl text-left flex-col gap-2 h-auto  opacity-0;
+  @apply flex text-base mt-4 rounded-xl text-left flex-col gap-2 h-auto opacity-0;
   font-family: arial;
+
 }
 .article:hover .article-content {
-  opacity: 1;
-  transition: opacity 2s linear;
+  animation: dropIn 3s;
 }
 .primary-content {
   @apply  p-2 bg-secondary rounded-xl;
@@ -89,5 +90,25 @@ export default {
 }
 .view-title:hover {
   transform: scale(1.2);
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 </style>
