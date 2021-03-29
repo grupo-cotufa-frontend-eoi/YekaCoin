@@ -22,7 +22,6 @@
         <div class="card-content">
           <button class="card-content__btn">
             <i class="far fa-star"></i>
-            <!-- <i class="fas fa-star"></i> -->
           </button>
         </div>
       </div>
