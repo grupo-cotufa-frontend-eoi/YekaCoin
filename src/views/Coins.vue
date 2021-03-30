@@ -22,30 +22,28 @@ export default {
     CoinCard,
   },
   methods: {
-    ...mapActions(["fetchCoinsData"]),
-    updateCoins() {
-      this.fetchCoinsData();
+    ...mapActions(["saveFavorite"]),
+    async updateCoins() {
+      await this.saveFavorite();
     },
   },
   computed: {
     ...mapState(["coins"]),
   },
-  beforeMount() {
-    this.updateCoins();
+  async beforeMount() {
+    await this.updateCoins();
   },
 };
 </script>
 
 <style lang="postcss">
 .container {
-  @apply flex flex-col;
-
   & .coins-title {
-    @apply flex justify-center gap-32 items-center w-full h-full mx-auto mb-6 font-extrabold;
+    @apply flex justify-around mb-6 font-extrabold;
   }
 
   & .coins-container {
-    @apply flex flex-col justify-center items-center w-full h-full mx-auto;
+    @apply flex flex-col justify-center items-center w-full h-full;
   }
 }
 

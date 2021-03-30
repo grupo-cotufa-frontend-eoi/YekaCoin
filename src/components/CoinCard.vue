@@ -19,8 +19,9 @@
         <span class="card-content__text uppercase">+{{parseFloat(coin.change).toFixed(2)}}</span>
       </div>
       <div class="card-content">
-        <button class="card-content__btn">
-          <i class="far fa-star"></i>
+        <button @click.prevent="updateFavorite(coin.uuid)" class="card-content__btn">
+            <i v-if="favorite.includes(coin.uuid)" class="fas fa-star active"></i>
+            <i v-else class="far fa-star"></i>
         </button>
       </div>
     </div>
@@ -42,10 +43,16 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["filterCoinID"]),
+    ...mapActions(["filterCoinID", "addFavorite", "deleteFavorite"]),
+    updateFavorite (id) {
+      if (this.favorite.includes(id)) {
+        this.deleteFavorite(id);
+      } else this.addFavorite(id);
+    },
+
   },
   computed: {
-    ...mapState(["id"]),
+    ...mapState(["id", "favorite"]),
   },
 };
 </script>
