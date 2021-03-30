@@ -1,16 +1,34 @@
 <template>
-    <CoinsCard />
+  <div class="coins-container">
+    <CoinCard v-for="coin of this.coins" :key="coin.uuid" :coin="coin"></CoinCard>
+  </div>
 </template>
 
 <script>
-import CoinsCard from "../components/CoinsCard";
+import CoinCard from "../components/CoinCard";
+import { mapActions, mapState } from "vuex";
 export default {
+  name: "Coins",
   components: {
-    CoinsCard,
+    CoinCard,
+  },
+  methods: {
+    ...mapActions(["fetchCoinsData"]),
+    updateCoins() {
+      this.fetchCoinsData();
+    },
+  },
+  computed: {
+    ...mapState(["coins"]),
+  },
+  beforeMount() {
+    this.updateCoins();
   },
 };
 </script>
 
-<style>
-
+<style lang="postcss">
+.coins-container {
+  @apply flex flex-col justify-center items-center w-full h-full mx-auto;
+}
 </style>

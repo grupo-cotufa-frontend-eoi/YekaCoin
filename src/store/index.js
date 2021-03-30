@@ -26,13 +26,6 @@ export default new Vuex.Store({
       context.commit("setID", id);
     },
   },
-  getters: {
-    /*
-     * Value: (state) => {
-     *   return state.value;
-     * },
-     */
-  },
   modules: {
 
   },

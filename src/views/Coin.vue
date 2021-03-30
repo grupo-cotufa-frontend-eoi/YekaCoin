@@ -54,6 +54,7 @@ export default {
           },
         },
       });
+      return myChart;
     },
     setData(id) {
       // Guardamos la moneda a graficar
@@ -62,7 +63,7 @@ export default {
       });
       // Guardamos los valores de la moneda
       const sparklines = [...this.coin.sparkline];
-      this.coinSparklines = sparklines.map((spark) => +parseFloat(spark).toFixed(2));
+      this.coinSparklines = sparklines.map((spark) => parseFloat(spark));
 
       // Reducimos los valores obtenidos a formato 24 h
       const reduceAmount = this.coinSparklines.length - 24;

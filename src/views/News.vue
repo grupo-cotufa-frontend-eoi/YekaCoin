@@ -28,16 +28,16 @@ export default {
 };
 </script>
 <style lang="postcss">
-  .news-container {
-    @apply text-center grid grid-cols-2;
+.news-container {
+  @apply text-center grid grid-cols-2;
 
-    & .news-title {
-      @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
-      transition: transform .2s;
-    }
-
-    & .news-title:hover {
-      transform: scale(1.2);
-    }
+  & .news-title {
+    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
+    transition: transform .2s;
   }
+
+  & .news-title:hover {
+    transform: scale(1.2);
+  }
+}
 </style>
