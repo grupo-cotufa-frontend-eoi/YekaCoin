@@ -32,7 +32,7 @@ export default {
   @apply text-center grid grid-cols-2;
 
   & .news-title {
-    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
+    @apply  text-4xl font-extrabold col-span-2 capitalize bg-clip-text text-orange;
     transition: transform .2s;
   }
 
