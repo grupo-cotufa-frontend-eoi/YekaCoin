@@ -10,10 +10,11 @@ export default {
 
   async beforeMount () {
     await this.updateCoins();
+    await this.saveFavorite();
   },
 
   methods: {
-    ...mapActions(["fetchCoinsData"]),
+    ...mapActions(["fetchCoinsData", "saveFavorite"]),
     updateCoins() {
       this.fetchCoinsData();
     },

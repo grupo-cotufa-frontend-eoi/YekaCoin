@@ -8,6 +8,7 @@ export default new Vuex.Store({
     coins: [],
     id: "",
     favorite: [],
+    infoFavorite: [],
   },
   mutations: {
     async getCoins(state) {

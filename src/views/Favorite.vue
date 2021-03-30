@@ -7,7 +7,7 @@
     <h1>Favorite</h1>
   </div>
   <div class="coins-container" v-if="hasFavorite">
-    <CoinCard v-for="coin of this.favoriteCoin" :key="coin.uuid" :coin="coin"></CoinCard>
+    <CoinCard v-on:onClick="addFavorite" v-for="coin of this.favoriteCoin" :key="coin.uuid" :coin="coin"></CoinCard>
   </div>
 
   <div class="coins-container" v-else>
@@ -19,7 +19,7 @@
 
 <script>
 import CoinCard from "../components/CoinCard";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "Coins",
   data() {
@@ -32,7 +32,9 @@ export default {
     CoinCard,
   },
   methods: {
+    ...mapActions(["saveFavorite"]),
     async addFavorite () {
+      this.favoriteCoin = [];
       await Promise.all(this.coins.forEach(async (element) => {
         this.favorite.forEach(async (coin) => {
           if (element.uuid === coin) {
@@ -47,6 +49,7 @@ export default {
     ...mapState(["coins", "favorite"]),
   },
   beforeMount() {
+    this.saveFavorite();
     if (this.favorite.length > 0) { this.addFavorite(); }
   },
   mounted () {

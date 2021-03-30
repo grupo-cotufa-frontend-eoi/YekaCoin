@@ -43,7 +43,7 @@ export default {
   }
 
   & .coins-container {
-    @apply flex flex-col justify-center items-center w-full h-full;
+    @apply flex flex-col items-center w-full h-full;
   }
 }
 
