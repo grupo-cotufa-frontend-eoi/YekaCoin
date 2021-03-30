@@ -16,6 +16,8 @@ module.exports = {
         darkBlue: "#94CBFF",
         orange: "#DA7500",
         marine: "#2192FB",
+        indigo: colors.indigo,
+        yellow: colors.amber,
         grey: colors.coolGray,
       },
     },

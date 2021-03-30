@@ -13,10 +13,10 @@
         <span class="card-content__text uppercase">{{coin.symbol}}</span>
       </div>
       <div class="card-content">
-        <span class="card-content__text uppercase">{{coin.price}}</span>
+        <span class="card-content__text uppercase">{{parseFloat(coin.price).toFixed(2)}}</span>
       </div>
       <div class="card-content">
-        <span class="card-content__text uppercase">+{{coin.change}}</span>
+        <span class="card-content__text uppercase">+{{parseFloat(coin.change).toFixed(2)}}</span>
       </div>
       <div class="card-content">
         <button class="card-content__btn">
@@ -56,9 +56,10 @@ export default {
   @apply flex ml-2 mb-2 h-20 w-full
        border-marine bg-white hover:bg-primary
          border-2 rounded-md shadow-lg;
+  transition: transform .2s;
 
   & .card-content {
-    @apply flex items-center h-full w-min left-0 mx-5 p-5;
+    @apply flex items-center h-full w-32 left-0 mx-5 p-5;
 
     & .card-content__img {
       @apply h-12 w-12 mr-2;
@@ -77,5 +78,9 @@ export default {
       }
     }
   }
+}
+
+.card-coin:hover {
+  transform: scale(1.2);
 }
 </style>

@@ -19,6 +19,7 @@ export default {
     buildChart() {
       const canvas = document.getElementById("chart");
       Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = "black";
       const myChart = new Chart(canvas, {
         type: "line",
         data: {
@@ -26,8 +27,11 @@ export default {
           datasets: [{
             data: this.coinSparklines,
             label: `Current value: ${this.actualPrice}`,
-            backgroundColor: "#DA7500",
-            borderColor: "#FFE2B6",
+            pointRadius: 7,
+            pointHoverRadius: 10,
+            backgroundColor: "#BEE0FF",
+            borderColor: "#DA7500",
+            borderWidth: 3,
             fill: false,
           },
           ],
@@ -83,7 +87,12 @@ export default {
   },
 };
 </script>
-
-<style>
-
+<style lang="postcss">
+#chart {
+  @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl;
+  /* will-change: transform; */
+}
+/* #chart:hover {
+transform: translate3d(150px, 100px, 0);
+} */
 </style>
