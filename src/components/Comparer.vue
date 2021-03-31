@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "Comparer",
   data() {
@@ -60,10 +60,6 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["fetchCoinsData"]),
-    updateCoins() {
-      this.fetchCoinsData();
-    },
     setLeftCoin(coin) {
       this.leftCoin = coin;
     },
@@ -78,15 +74,34 @@ export default {
   computed: {
     ...mapState(["coins"]),
   },
-  beforeMount() {
-    this.updateCoins();
-  },
-  mounted () {
+  updated () {
     this.setDefaultValues();
   },
 };
 </script>
 
-<style>
+<style lang="postcss">
+.compare-tool {
+  @apply mt-10 w-full rounded-xl;
 
+  & .compare-tool__header {
+    @apply text-center mb-4;
+  }
+
+  & .compare-tool__body {
+    @apply grid bg-darkBlue border-2 border-marine h-80 w-auto rounded-xl shadow-md;
+
+    & .table-body {
+      @apply bg-primary border-2 border-orange;
+
+      & .logo {
+        @apply h-6 w-6;
+      }
+
+      & select {
+        @apply bg-lightBlue;
+      }
+    }
+  }
+}
 </style>

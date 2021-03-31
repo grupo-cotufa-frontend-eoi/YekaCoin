@@ -2,26 +2,41 @@
   <div class="container">
     <div class="welcome-msg">
       <h1 class="welcome-msg__title">Welcome to our Home Page!</h1>
-      <p class="welcome-msg__text">YekaCoin is a place where you can easily see the real price of most cryptocurrencies, as well as including graphs showing their evolution over time.</p>
+      <p class="welcome-msg__text">YekaCoin is a place where you can easily see the real price of most cryptocurrencies, as well as including graphs showing their evolution over time and also comparing the statistics of the coins.</p>
+    </div>
+    <div class="bubbles-section">
+      <h1 class="bubbles-section__title">These are all the currencies we work with</h1>
+      <div class="bubbles-container">
+        <BubbleCoin v-for="coin of this.coins" :key="coin.uuid" :coin="coin"></BubbleCoin>
+      </div>
     </div>
     <Comparer></Comparer>
   </div>
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 import Comparer from "../components/Comparer";
+import BubbleCoin from "../components/BubbleCoin";
 export default {
   name: "Home",
   components: {
     Comparer,
+    BubbleCoin,
   },
-
+  methods: {
+    ...mapActions(["fetchCoinsData"]),
+  },
+  computed: {
+    ...mapState(["coins"]),
+  },
+  beforeMount () {
+    this.fetchCoinsData();
+  },
 };
 </script>
 <style lang="postcss">
-.logo {
-  @apply h-6 w-6;
-}
+
 .container {
   @apply flex flex-col h-full w-full;
 
@@ -37,23 +52,11 @@ export default {
     }
   }
 
-  & .compare-tool {
-    @apply mt-10 w-full rounded-xl;
+  & .bubbles-section {
+    @apply flex flex-col justify-items-center items-center text-center font-medium m-10;
 
-    & .compare-tool__header {
-      @apply text-center mb-4;
-    }
-
-    & .compare-tool__body {
-      @apply grid bg-darkBlue border-2 border-marine h-80 w-auto rounded-xl shadow-md;
-
-      & .table-body {
-        @apply bg-primary border-2 border-orange;
-
-        & select {
-          @apply bg-lightBlue;
-        }
-      }
+    & .bubbles-container {
+      @apply flex flex-wrap;
     }
   }
 }

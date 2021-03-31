@@ -23,15 +23,12 @@ export default {
   },
   methods: {
     ...mapActions(["fetchCoinsData"]),
-    updateCoins() {
-      this.fetchCoinsData();
-    },
   },
   computed: {
     ...mapState(["coins"]),
   },
   beforeMount() {
-    this.updateCoins();
+    this.fetchCoinsData();
   },
 };
 </script>
