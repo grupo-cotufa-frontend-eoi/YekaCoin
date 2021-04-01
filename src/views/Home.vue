@@ -2,12 +2,22 @@
   <div class="container">
     <div class="welcome-msg">
       <h1 class="welcome-msg__title">Welcome to our Home Page!</h1>
-      <p class="welcome-msg__text">YekaCoin is a place where you can easily see the real price of most cryptocurrencies, as well as including graphs showing their evolution over time and also comparing the statistics of the coins.</p>
+      <p class="welcome-msg__text">
+        YekaCoin is a place where you can easily see the real price of most
+        cryptocurrencies, as well as including graphs showing their evolution
+        over time and also comparing the statistics of the coins.
+      </p>
     </div>
     <div class="bubbles-section">
-      <h1 class="bubbles-section__title">These are all the currencies we work with</h1>
+      <h1 class="bubbles-section__title">
+        These are all the currencies we work with
+      </h1>
       <div class="bubbles-container">
-        <BubbleCoin v-for="coin of this.coins" :key="coin.uuid" :coin="coin"></BubbleCoin>
+        <BubbleCoin
+          v-for="coin of this.coins"
+          :key="coin.uuid"
+          :coin="coin"
+        ></BubbleCoin>
       </div>
     </div>
     <Comparer></Comparer>
@@ -30,13 +40,12 @@ export default {
   computed: {
     ...mapState(["coins"]),
   },
-  beforeMount () {
+  beforeMount() {
     this.fetchCoinsData();
   },
 };
 </script>
 <style lang="postcss">
-
 .container {
   @apply flex flex-col h-full w-full;
 
@@ -44,7 +53,7 @@ export default {
     @apply text-center w-full;
 
     & .welcome-msg__title {
-      @apply text-4xl mb-4 font-extrabold;
+      @apply text-4xl my-10;
     }
 
     & .welcome-msg__text {

@@ -22,6 +22,13 @@
         </svg>
       </SideMenuButton>
     </router-link>
+    <router-link to="/comparison-chart">
+      <SideMenuButton>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm9 4a1 1 0 10-2 0v6a1 1 0 102 0V7zm-3 2a1 1 0 10-2 0v4a1 1 0 102 0V9zm-3 3a1 1 0 10-2 0v1a1 1 0 102 0v-1z" clip-rule="evenodd" />
+        </svg>
+      </SideMenuButton>
+    </router-link>
     <router-link to="/news">
       <SideMenuButton>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -47,6 +54,6 @@ export default {
   @apply flex-col m-8
        bg-secondary border-darkBlue
          border-2 rounded-xl shadow-lg
-         md:px-4 md:py-7 max-h-64 sm:flex hidden;
+         md:px-4 md:py-7 max-h-80 sm:flex hidden;
 }
 </style>

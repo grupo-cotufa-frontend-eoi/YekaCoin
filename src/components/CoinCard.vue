@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{name: 'Coin', params: {id: coin.uuid, nameCoin: coin.name}}">
+  <router-link :to="{name: 'CoinChart', params: {id: coin.uuid, nameCoin: coin.name}}">
     <div class="card-coin" @click="filterCoinID(coin.uuid)">
       <div class="card-content">
         <img

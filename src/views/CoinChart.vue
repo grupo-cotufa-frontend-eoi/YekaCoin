@@ -6,7 +6,7 @@
 import { mapState } from "vuex";
 import { Chart } from "chart.js";
 export default {
-  name: "Coin",
+  name: "CoinChart",
   data() {
     return {
       coin: {},
@@ -90,9 +90,6 @@ export default {
 <style lang="postcss">
 #chart {
   @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl;
-  /* will-change: transform; */
 }
-/* #chart:hover {
-transform: translate3d(150px, 100px, 0);
-} */
+
 </style>

@@ -13,6 +13,8 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+
+    "prettier/prettier": "off",
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     quotes: ["error", "double", { allowTemplateLiterals: true }],
@@ -50,7 +52,7 @@ module.exports = {
     yoda: ["error", "never"],
     "max-len": ["off"],
     "max-lines": ["error"],
-    "max-lines-per-function": ["error", 60],
+    "max-lines-per-function": ["error", 120],
     "max-nested-callbacks": ["error", 5],
     "max-params": ["error", 6],
     "max-depth": ["error", 5],
@@ -77,7 +79,7 @@ module.exports = {
     "dot-location": ["error"],
     eqeqeq: ["error", "always"],
     "no-new-func": ["error"],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["off"],
   },
   overrides: [
     {
