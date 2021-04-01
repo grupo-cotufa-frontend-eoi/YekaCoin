@@ -90,7 +90,7 @@ export default {
           datasets: [
             {
               data: this.sparklines[0],
-              label: this.first.name,
+              label: this.first.name + ": " + this.first.price,
               backgroundColor: "#3e95cd",
               borderColor: "#3e95cd",
               fill: false,
@@ -99,7 +99,7 @@ export default {
             },
             {
               data: this.sparklines[1],
-              label: this.second.name,
+              label: this.second.name + ": " + this.second.price,
               backgroundColor: "#8e5ea2",
               borderColor: "#8e5ea2",
               fill: false,
