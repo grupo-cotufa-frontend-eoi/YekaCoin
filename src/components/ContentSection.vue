@@ -5,16 +5,22 @@
 </template>
 
 <script>
-
+import { mapActions } from "vuex";
 export default {
 
+  async beforeMount () {
+    await this.fetchCoinsData();
+    await this.saveFavorite();
+  },
+
+  methods: {
+    ...mapActions(["fetchCoinsData", "saveFavorite"]),
+  },
 };
 </script>
 <style lang="postcss">
 .content-section {
-  @apply flex p-6 m-9 ml-2 w-10/12 md:w-9/12 lg:w-10/12
+  @apply flex p-6 tablet:mr-10 w-full mx-4 mt-8 ml-0
          border-2 border-darkBlue shadow-lg rounded-xl;
 }
 </style>
-
-/*  <section class="mt-8 px-4 py-4 w-10/12 md:w-9/12 lg:w-10/12 shadow-lg"> */

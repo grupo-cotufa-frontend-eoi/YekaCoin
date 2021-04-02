@@ -1,26 +1,43 @@
 <template>
-
-<div class="w-full flex flex-col justify-center text-center">
-  <h1>News section</h1>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-    <a href="#" class="news-box">1</a>
-    <a href="#" class="news-box">2</a>
-    <a href="#" class="news-box">3</a>
-    <a href="#" class="news-box">4</a>
-    <a href="#" class="news-box">5</a>
-    <a href="#" class="news-box">6</a>
-    <a href="#" class="news-box">7</a>
-    <a href="#" class="news-box">8</a>
+  <div class="news-container">
+    <h1 class="news-title">News section</h1>
+      <NewsCard v-for="(item, index) of this.news" :key="index" :item="item"></NewsCard>
   </div>
-</div>
-
 </template>
-
+<script>
+import NewsCard from "../components/NewsCard";
+export default {
+  name: "News",
+  components: {
+    NewsCard,
+  },
+  data() {
+    return {
+      news: [],
+    };
+  },
+  methods: {
+    setNews() {
+      const data = require("../../public/news.json");
+      this.news = data.news;
+    },
+  },
+  mounted () {
+    this.setNews();
+  },
+};
+</script>
 <style lang="postcss">
-.news-box {
-  @apply w-full bg-primary m-2 font-extrabold;
-}
-h1 {
+.news-container {
+  @apply text-center w-auto sm:grid sm:grid-cols-2;
 
+  & .news-title {
+    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
+    transition: transform .2s;
+  }
+
+  & .news-title:hover {
+    transform: scale(1.2);
+  }
 }
 </style>

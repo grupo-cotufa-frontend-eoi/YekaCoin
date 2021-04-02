@@ -62,7 +62,7 @@ module.exports = {
     "no-useless-catch": ["error"],
     "vars-on-top": ["warn"],
     "arrow-parens": ["error"],
-    "space-before-function-paren": ["error"],
+    "space-before-function-paren": ["off"],
     "no-unexpected-multiline": ["error"],
     "no-unreachable": ["error"],
     "no-unsafe-finally": ["error"],
