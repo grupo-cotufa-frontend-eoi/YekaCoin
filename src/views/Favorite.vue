@@ -6,13 +6,10 @@
     <h1>Change</h1>
     <h1>Favorite</h1>
   </div>
-  <div class="coins-container" v-if="hasFavorite">
-    <CoinCard v-on:onClick="addFavorite" v-for="coin of this.favoriteCoin" :key="coin.uuid" :coin="coin"></CoinCard>
+  <div class="coins-container" v-if="favoriteCoin.length !==0" >
+    <CoinCard v-on:onClick="addFavorite" v-for="coin of this.favoriteCoin" :key="coin.uuid" :coin="coin" ></CoinCard>
   </div>
-
-  <div class="coins-container" v-else>
-    <h1>No hays</h1>
-  </div>
+  <h1 v-else>hola</h1>
 </div>
 
 </template>
@@ -25,7 +22,6 @@ export default {
   data() {
     return {
       favoriteCoin: [],
-      hasFavorite: false,
     };
   },
   components: {
@@ -38,25 +34,22 @@ export default {
       await Promise.all(this.coins.forEach(async (element) => {
         this.favorite.forEach(async (coin) => {
           if (element.uuid === coin) {
-            await this.favoriteCoin.push(element);
+            this.favoriteCoin.push(element);
           }
         });
       }));
     },
-
   },
   computed: {
     ...mapState(["coins", "favorite"]),
   },
-  beforeMount() {
-    this.saveFavorite();
-    if (this.favorite.length > 0) { this.addFavorite(); }
+
+  async created () {
+    if (this.favorite.length > 0) { await this.addFavorite(); }
   },
-  mounted () {
-    if (this.favoriteCoin.length > 0) this.hasFavorite = true;
-    else this.hasFavorite = false;
-  },
+
 };
+
 </script>
 
 <style lang="postcss">

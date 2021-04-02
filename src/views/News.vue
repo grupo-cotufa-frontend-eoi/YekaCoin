@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="postcss">
 .news-container {
-  @apply text-center grid grid-cols-2;
+  @apply text-center w-auto sm:grid sm:grid-cols-2;
 
   & .news-title {
     @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;

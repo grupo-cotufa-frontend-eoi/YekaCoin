@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="w-full">
     <Header/>
-    <main class="flex">
+    <div class="flex w-full flex-col tablet:flex-row ">
         <!-- Dentro del side menu están todas las rutas -->
         <SideMenu/>
         <!-- Dentro de content section es donde está todo el contenido dinámico -->
         <ContentSection></ContentSection>
-    </main>
+    </div>
     <!-- Aqui si quisieramos podriamos meter un footer -->
   </div>
 </template>

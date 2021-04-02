@@ -39,7 +39,7 @@ export default {
 <style lang="postcss">
 
 .article {
-  @apply w-11/12 border-4 border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96;
+  @apply w-11/12 border-4 flex flex-col justify-around border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96;
   transition: max-height 2s ease-out;
   animation: fadeInUp 3s;
 
@@ -56,11 +56,11 @@ export default {
   }
 
   & .article-content {
-    @apply flex text-base mt-4 rounded-xl text-left flex-col gap-2 h-auto opacity-0;
-    font-family: arial;
+    @apply text-base mt-4 rounded-xl text-left flex-col gap-2 h-auto opacity-0 hidden;
+    font-family: arial ;
 
     & .primary-content {
-      @apply  p-2 bg-secondary rounded-xl;
+      @apply  p-2 bg-secondary rounded-xl ;
     }
 
     & .primary-content__abstract__title {
@@ -87,7 +87,9 @@ export default {
 }
 
 .article:hover .article-content {
+  display: flex;
   animation: dropIn 5s both;
+
 }
 
 @keyframes fadeInUp {

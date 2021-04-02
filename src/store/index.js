@@ -8,9 +8,10 @@ export default new Vuex.Store({
     coins: [],
     id: "",
     favorite: [],
-    infoFavorite: [],
+
   },
   mutations: {
+
     async getCoins(state) {
       const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
       const vista = await url.json();
@@ -19,35 +20,35 @@ export default new Vuex.Store({
     setID(state, id) {
       state.id = id;
     },
-    addFavorite (state, idcoin) {
+    addFavorite(state, idcoin) {
       state.favorite.push(idcoin);
       localStorage.setItem("favorite", JSON.stringify(state.favorite));
     },
-    async agregarFavorito (state) {
-      if (localStorage.getItem("favorite") !== null) {
+    async agregarFavorito(state) {
+      if (localStorage.getItem("favorite")) {
         state.favorite = await JSON.parse(localStorage.getItem("favorite"));
       }
     },
-    removeFavorite (state, idcoin) {
+    removeFavorite(state, idcoin) {
       const newArray = state.favorite.filter((coin) => coin !== idcoin);
       state.favorite = [...newArray];
       localStorage.setItem("favorite", JSON.stringify(state.favorite));
     },
   },
   actions: {
-    async fetchCoinsData(context) {
-      await context.commit("getCoins");
+    fetchCoinsData(context) {
+      context.commit("getCoins");
     },
     filterCoinID(context, id) {
       context.commit("setID", id);
     },
-    addFavorite (context, idcoin) {
+    addFavorite(context, idcoin) {
       context.commit("addFavorite", idcoin);
     },
-    async saveFavorite (context) {
-      await context.commit("agregarFavorito");
+    saveFavorite(context) {
+      context.commit("agregarFavorito");
     },
-    deleteFavorite (context, idCoins) {
+    deleteFavorite(context, idCoins) {
       context.commit("removeFavorite", idCoins);
     },
   },
