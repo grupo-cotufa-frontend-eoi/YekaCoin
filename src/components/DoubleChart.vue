@@ -96,7 +96,7 @@ export default {
     calculateMaxLimit(firstPrices, secondPrices) {
       const firstMax = Math.max(...firstPrices);
       const secondMax = Math.max(...secondPrices);
-      this.maxLimit = (firstMax > secondMax ? firstMax : secondMax) * 1.8;
+      this.maxLimit = firstMax > secondMax ? firstMax : secondMax;
     },
     buildChart() {
       const canvas = document.getElementById("chart");
@@ -105,7 +105,7 @@ export default {
       if (window.myCharts !== undefined) {
         window.myCharts.destroy();
       }
-      window.myCharts = this.myChart = new Chart(canvas, {
+      window.myCharts = new Chart(canvas, {
         type: "line",
         data: {
           labels: this.labels,
