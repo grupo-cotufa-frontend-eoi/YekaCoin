@@ -83,7 +83,7 @@ export default {
 <style lang="postcss">
 .card-coin {
 
-  @apply grid grid-cols-18 mb-2 h-20 w-11/12
+  @apply grid grid-cols-18 mb-2 max-h-24 sm:h-20 w-11/12
        border-marine bg-white hover:bg-primary
          border-2 rounded-md shadow-lg;
   transition: transform 0.2s;
@@ -91,7 +91,7 @@ export default {
     @apply grid grid-cols-2 w-full h-full ;
 
     & .card-change  {
-      @apply flex flex-col md:flex-row md:justify-around lg:justify-evenly md:items-center h-full lg:mx-5
+      @apply flex flex-col md:flex-row md:justify-around lg:justify-evenly md:items-center h-full lg:mx-5 height:justify-around
     }
 
     & .card-content {
@@ -102,7 +102,7 @@ export default {
     }
 
     & .card-content__text {
-      @apply text-lg sm:text-xl;
+      @apply text-lg sm:text-xl height:text-2xl;
     }
     }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full">
+  <div class="w-full relative">
     <Header/>
     <div class="flex w-full flex-col tablet:flex-row ">
         <!-- Dentro del side menu están todas las rutas -->
@@ -28,9 +28,9 @@ export default {
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro");
 html {
-  font-family: 'Advent Pro', sans-serif;
+   font-family: "Advent Pro", sans-serif;
   font-size: 1.2rem;
 }
 body {

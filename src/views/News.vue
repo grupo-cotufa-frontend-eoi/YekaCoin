@@ -32,7 +32,7 @@ export default {
   @apply text-center w-auto sm:grid sm:grid-cols-2;
 
   & .news-title {
-    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
+    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange text-4xl;
     transition: transform .2s;
   }
 

@@ -1,20 +1,24 @@
 <template>
   <section class="content-section">
-    <router-view/>
+    <router-view v-if="coins.length > 0"/>
+    <h1 v-else>vida</h1>
   </section>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
 
   async beforeMount () {
     await this.fetchCoinsData();
-    await this.saveFavorite();
+    this.saveFavorite();
   },
 
   methods: {
     ...mapActions(["fetchCoinsData", "saveFavorite"]),
+  },
+  computed: {
+    ...mapState(["coins", "favorite"]),
   },
 };
 </script>

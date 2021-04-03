@@ -24,9 +24,9 @@ export default new Vuex.Store({
       state.favorite.push(idcoin);
       localStorage.setItem("favorite", JSON.stringify(state.favorite));
     },
-    async agregarFavorito(state) {
+    agregarFavorito(state) {
       if (localStorage.getItem("favorite")) {
-        state.favorite = await JSON.parse(localStorage.getItem("favorite"));
+        state.favorite = JSON.parse(localStorage.getItem("favorite"));
       }
     },
     removeFavorite(state, idcoin) {

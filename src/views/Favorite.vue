@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container height:w-11/12 mx-auto">
   <div class="coins-title">
     <h1>Cryptocurrency</h1>
     <h1>Value</h1>
@@ -29,23 +29,24 @@ export default {
   },
   methods: {
     ...mapActions(["saveFavorite"]),
-    async addFavorite () {
+
+    addFavorite () {
       this.favoriteCoin = [];
-      await Promise.all(this.coins.forEach(async (element) => {
-        this.favorite.forEach(async (coin) => {
+      this.coins.forEach((element) => {
+        this.favorite.forEach((coin) => {
           if (element.uuid === coin) {
             this.favoriteCoin.push(element);
           }
         });
-      }));
+      });
     },
   },
   computed: {
     ...mapState(["coins", "favorite"]),
   },
 
-  async created () {
-    if (this.favorite.length > 0) { await this.addFavorite(); }
+  beforeMount () {
+    if (this.favorite.length > 0) { this.addFavorite(); }
   },
 
 };

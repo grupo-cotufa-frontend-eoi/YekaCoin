@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container height:w-11/12 mx-auto">
   <div class="coins-title">
     <h1>Cryptocurrency</h1>
     <h1>Value</h1>

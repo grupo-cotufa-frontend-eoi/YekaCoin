@@ -1,5 +1,5 @@
 <template>
-  <div class="article" >
+  <div class="article hidden" id="article">
     <div class="article-title">
       {{item.title}}
     </div>
@@ -34,24 +34,25 @@ export default {
     },
   },
 };
+
 </script>
 
 <style lang="postcss">
 
 .article {
-  @apply w-11/12 border-4 flex flex-col justify-around border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96;
+  @apply w-11/12 border-4 flex flex-col justify-around border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96 height:max-h-99 height:pb-6;
   transition: max-height 2s ease-out;
   animation: fadeInUp 3s;
 
   & .article-title {
-    @apply text-primary;
+    @apply text-primary height:text-3xl;
   }
 
   & .article-img {
-    @apply mt-2 border-2 border-primary shadow-md rounded-2xl;
+    @apply mt-2 border-2 border-primary shadow-md rounded-2xl ;
 
     & .article-content__img {
-      @apply rounded-xl;
+      @apply rounded-xl height:w-full;
     }
   }
 
@@ -84,6 +85,7 @@ export default {
 
 .article:hover {
   max-height: 100%;
+  justify-content: start;
 }
 
 .article:hover .article-content {
@@ -101,7 +103,7 @@ export default {
     opacity: 1;
     transform: translateY(0%);
   }
-}
+  }
 @keyframes dropIn {
   0% {
     opacity: 0;
