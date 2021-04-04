@@ -34,11 +34,13 @@ export default {
 </script>
 <style lang="postcss">
 .header-container {
-  @apply flex justify-between items-center h-24 px-1 py-1 md:px-2 md:py-2
+  @apply flex justify-between items-center
+         h-24 px-1 py-1 md:px-2 md:py-2
          border-b-2 border-darkBlue shadow-lg;
 
   & .logo-container {
-    @apply flex items-center px-1 py-1 h-28 w-28 m-2;
+    @apply flex items-center
+         px-1 py-1 h-28 w-28 m-2;
   }
 
   & .header-letters {

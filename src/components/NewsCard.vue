@@ -1,5 +1,5 @@
 <template>
-  <div class="article">
+  <div class="article hidden" id="article">
     <div class="article-title">
       {{ item.title }}
     </div>
@@ -44,58 +44,47 @@ export default {
 
 <style lang="postcss">
 .article {
-  @apply w-11/12 border-4 flex flex-col justify-around border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96;
-  transition: max-height 2s;
+  @apply w-11/12 border-4 flex flex-col justify-around border-primary p-5 m-4 bg-orange rounded-2xl shadow-lg overflow-hidden max-h-96 height:max-h-99 height:pb-6;
+  transition: max-height 2s ease-out;
   animation: fadeInUp 3s;
-
   & .article-title {
-    @apply text-primary;
+    @apply text-primary height:text-3xl;
   }
-
   & .article-img {
     @apply mt-2 border-2 border-primary shadow-md rounded-2xl;
-
     & .article-content__img {
-      @apply rounded-xl;
+      @apply rounded-xl height:w-full;
     }
   }
-
   & .article-content {
     @apply text-base mt-4 rounded-xl text-left flex-col gap-2 h-auto opacity-0 hidden;
     font-family: arial;
-
     & .primary-content {
       @apply p-2 bg-secondary rounded-xl;
     }
-
     & .primary-content__abstract__title {
       @apply border-b-2 border-dotted border-orange text-center;
     }
-
     & .extra-content {
       @apply p-2 bg-lightBlue rounded-xl;
-
       & .extra-content__source,
       & .extra-content__date {
         @apply inline;
       }
-
       & .extra-content__article-link {
         @apply border-b-2 text-marine border-marine text-left;
       }
     }
   }
 }
-
 .article:hover {
   max-height: 100%;
+  justify-content: start;
 }
-
 .article:hover .article-content {
   display: flex;
-  animation: dropIn 5s ease-in-out both;
+  animation: dropIn 5s both;
 }
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -106,20 +95,15 @@ export default {
     transform: translateY(0%);
   }
 }
-
 @keyframes dropIn {
   0% {
     opacity: 0;
     transform: translateX(-50%);
   }
   35%,
-  80% {
+  100% {
     opacity: 1;
     transform: translateX(0%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%);
   }
 }
 </style>

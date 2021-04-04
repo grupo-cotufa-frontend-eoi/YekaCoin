@@ -77,11 +77,9 @@ export default {
       // Guardamos los valores de la moneda
       const sparklines = [...this.coin.sparkline];
       this.coinSparklines = sparklines.map((spark) => parseFloat(spark));
-
       // Reducimos los valores obtenidos a formato 24 h
       const reduceAmount = this.coinSparklines.length - 24;
       this.coinSparklines = this.coinSparklines.slice(reduceAmount);
-
       // Seteamos valores de label y actual price
       this.labels = this.coinSparklines.map((spark, index) => index.toString());
       this.actualPrice = parseFloat(this.coin.price).toFixed(2);

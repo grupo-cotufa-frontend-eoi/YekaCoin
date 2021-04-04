@@ -19,7 +19,7 @@ export default {
 </script>
 <style lang="postcss">
 .content-section {
-  @apply flex justify-center p-4  tablet:mr-10 w-full mx-4 my-8
+  @apply flex p-6 tablet:mr-10 w-full mx-4 mt-8 ml-0
          border-2 border-darkBlue shadow-lg rounded-xl;
 }
 </style>

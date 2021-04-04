@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container height:w-11/12 mx-auto">
     <div class="coins-title">
       <h1>Cryptocurrency</h1>
       <h1>Value</h1>
@@ -44,7 +44,6 @@ export default {
   & .coins-title {
     @apply flex justify-around mb-6 font-extrabold;
   }
-
   & .coins-container {
     @apply flex flex-col items-center w-full h-full;
   }

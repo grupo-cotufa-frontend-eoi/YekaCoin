@@ -1,25 +1,25 @@
 <template>
-  <div class="compare-tool">
-    <div class="compare-tool__header">
+  <div class="h-auto flex flex-col items-center justify-center">
+    <div class="compare-tool__header text-center">
       <div>¿Do you want to compare cryptocurrency statistics?</div>
     </div>
-    <div class="compare-tool__body">
-      <table class="table-auto">
-        <thead class="table-head">
-          <tr>
-            <th>Selection</th>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Symbol</th>
-            <th>Icon</th>
-            <th>Price</th>
-            <th>Change</th>
+    <div class="container compare-tool__body pb-2">
+      <table class="table-responsive">
+        <thead>
+          <tr class="column-responsive">
+            <th class="text-table">Selection</th>
+            <th class="text-table">Rank</th>
+            <th class="text-table">Name</th>
+            <th class="text-table">Symbol</th>
+            <th class="text-table">Icon</th>
+            <th class="text-table">Price</th>
+            <th class="text-table">Change</th>
           </tr>
         </thead>
-        <tbody class="table-body">
-          <tr>
-            <td>
-              <select class="left-coin" v-model="leftCoin">
+        <tbody class="table-body table-body pb-2">
+          <tr class="table-content">
+            <td class="flex justify-center">
+              <select v-model="leftCoin">
                 <option
                   v-for="coin of this.coins"
                   :key="coin.index"
@@ -29,31 +29,43 @@
                 </option>
               </select>
             </td>
-            <td>{{ leftCoin.rank }}</td>
-            <td>{{ leftCoin.name }}</td>
-            <td>{{ leftCoin.symbol }}</td>
-            <td><img class="logo" :src="leftCoin.iconUrl" alt="" /></td>
-            <td>{{ parseFloat(leftCoin.price).toFixed(2) }} $</td>
-            <td>{{ parseFloat(leftCoin.change).toFixed(2) }} %</td>
+            <td class="text-table">{{ leftCoin.rank }}</td>
+            <td class="text-table">{{ leftCoin.name }}</td>
+            <td class="text-table">{{ leftCoin.symbol }}</td>
+            <td class="flex justify-center items-center">
+              <img class="logo" :src="leftCoin.iconUrl" alt="" />
+            </td>
+            <td class="text-table">
+              {{ parseFloat(leftCoin.price).toFixed(2) }} $
+            </td>
+            <td class="text-table">
+              {{ parseFloat(leftCoin.change).toFixed(2) }} %
+            </td>
           </tr>
-          <tr>
-            <td>
-              <select class="right-coin" v-model="rightCoin">
+          <tr class="table-content">
+            <td class="flex justify-center">
+              <select v-model="rightCoin">
                 <option
                   v-for="coin of this.coins"
-                  :key="coin.uuid"
+                  :key="coin.index"
                   :value="coin"
                 >
                   {{ coin.name }}
                 </option>
               </select>
             </td>
-            <td>{{ rightCoin.rank }}</td>
-            <td>{{ rightCoin.name }}</td>
-            <td>{{ rightCoin.symbol }}</td>
-            <td><img class="logo" :src="rightCoin.iconUrl" alt="" /></td>
-            <td>{{ parseFloat(rightCoin.price).toFixed(2) }} $</td>
-            <td>{{ parseFloat(rightCoin.change).toFixed(2) }} %</td>
+            <td class="text-table">{{ rightCoin.rank }}</td>
+            <td class="text-table">{{ rightCoin.name }}</td>
+            <td class="text-table">{{ rightCoin.symbol }}</td>
+            <td class="flex justify-center items-center">
+              <img class="logo" :src="rightCoin.iconUrl" alt="" />
+            </td>
+            <td class="text-table">
+              {{ parseFloat(rightCoin.price).toFixed(2) }} $
+            </td>
+            <td class="text-table">
+              {{ parseFloat(rightCoin.change).toFixed(2) }} %
+            </td>
           </tr>
         </tbody>
       </table>
@@ -89,22 +101,36 @@ export default {
 </script>
 
 <style lang="postcss">
-.compare-tool {
-  @apply mt-10 w-full rounded-xl;
-  & .compare-tool__header {
-    @apply text-center mb-4;
+.compare-tool__header {
+  @apply text-center mb-4;
+}
+.compare-tool__body {
+  @apply bg-darkBlue border-2 border-marine w-auto rounded-xl shadow-md;
+}
+.table-body {
+  @apply bg-primary border-2 border-orange;
+}
+.text-table {
+  @apply text-center;
+}
+@media (max-width: 764px) {
+  .table-responsive {
+    display: flex;
+    justify-content: space-around;
   }
-  & .compare-tool__body {
-    @apply grid bg-darkBlue border-2 border-marine h-80 w-auto rounded-xl shadow-md;
-    & .table-body {
-      @apply bg-primary border-2 border-orange;
-      & .logo {
-        @apply h-6 w-6;
-      }
-      & select {
-        @apply bg-lightBlue;
-      }
-    }
+  .column-responsive,
+  .table-content {
+    display: flex;
+    flex-direction: column;
   }
+  .table-body {
+    display: flex;
+  }
+}
+.selected-coin {
+  @apply text-xl text-center;
+}
+.logo {
+  @apply h-9 w-9;
 }
 </style>

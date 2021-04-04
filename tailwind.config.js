@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       screens: {
         tablet: "900px",
+        height: "1600px",
       },
       boxShadow: {
         lg: "5px 5px 0px #a5c3de, -5px -5px 0px #d7fdff",
@@ -28,6 +29,10 @@ module.exports = {
       gridTemplateColumns: {
         16: "90% 10%",
         18: "80% 20%",
+        20: "95% 5%",
+      },
+      maxHeight: {
+        99: "29rem",
       },
     },
   },
