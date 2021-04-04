@@ -1,14 +1,13 @@
 <template>
   <section class="content-section">
-    <router-view/>
+    <router-view />
   </section>
 </template>
 
 <script>
 import { mapActions } from "vuex";
 export default {
-
-  async beforeMount () {
+  async beforeMount() {
     await this.fetchCoinsData();
     await this.saveFavorite();
   },

@@ -2,10 +2,14 @@
   <header class="header-container">
     <!-- Contenedor de la imagen -->
     <div class="logo-container">
-      <img class="object-contain" src="../assets/logo.png" alt="YekaCoin Logo">
+      <img
+        class="object-contain"
+        src="../assets/logo.png"
+        alt="YekaCoin Logo"
+      />
     </div>
     <!-- Contenedor de las letras del logo -->
-    <div>
+    <div class="header-letters">
       <LogoLetters></LogoLetters>
     </div>
     <!-- Zona de botones -->
@@ -33,20 +37,18 @@ export default {
   @apply flex justify-between items-center
          h-24 px-1 py-1 md:px-2 md:py-2
          border-b-2 border-darkBlue shadow-lg;
-}
-.logo-container {
-  @apply flex items-center
+
+  & .logo-container {
+    @apply flex items-center
          px-1 py-1 h-28 w-28 m-2;
-}
-.logo-container:hover {
-  animation: sideMove 3s;
-}
-@keyframes sideMove {
-  0% {
-    transform: translateX(0);
   }
-  30% {
-    transform: translateX(100%);
+
+  & .header-letters {
+    transition: transform 0.2s;
+  }
+
+  & .header-letters:hover {
+    transform: scale(1.2);
   }
 }
 </style>

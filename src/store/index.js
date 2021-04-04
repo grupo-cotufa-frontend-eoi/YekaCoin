@@ -8,10 +8,8 @@ export default new Vuex.Store({
     coins: [],
     id: "",
     favorite: [],
-
   },
   mutations: {
-
     async getCoins(state) {
       const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
       const vista = await url.json();

@@ -1,7 +1,11 @@
 <template>
   <div class="news-container">
     <h1 class="news-title">News section</h1>
-      <NewsCard v-for="(item, index) of this.news" :key="index" :item="item"></NewsCard>
+    <NewsCard
+      v-for="(item, index) of this.news"
+      :key="index"
+      :item="item"
+    ></NewsCard>
   </div>
 </template>
 <script>
@@ -22,7 +26,7 @@ export default {
       this.news = data.news;
     },
   },
-  mounted () {
+  mounted() {
     this.setNews();
   },
 };
@@ -32,12 +36,7 @@ export default {
   @apply text-center w-auto sm:grid sm:grid-cols-2;
 
   & .news-title {
-    @apply  font-extrabold col-span-2 capitalize bg-clip-text text-orange;
-    transition: transform .2s;
-  }
-
-  & .news-title:hover {
-    transform: scale(1.2);
+    @apply text-4xl font-semibold col-span-2 my-5;
   }
 }
 </style>

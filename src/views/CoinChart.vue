@@ -1,12 +1,14 @@
 <template>
-  <canvas id="chart" width="1000" height="500">Your navigator doesn't allow graphics</canvas>
+  <canvas id="chart" width="1000" height="500"
+    >Your navigator doesn't allow graphics</canvas
+  >
 </template>
 
 <script>
 import { mapState } from "vuex";
 import { Chart } from "chart.js";
 export default {
-  name: "Coin",
+  name: "CoinChart",
   data() {
     return {
       coin: {},
@@ -24,33 +26,38 @@ export default {
         type: "line",
         data: {
           labels: this.labels,
-          datasets: [{
-            data: this.coinSparklines,
-            label: `Current value: ${this.actualPrice}`,
-            pointRadius: 7,
-            pointHoverRadius: 10,
-            backgroundColor: "#BEE0FF",
-            borderColor: "#DA7500",
-            borderWidth: 3,
-            fill: false,
-          },
+          datasets: [
+            {
+              data: this.coinSparklines,
+              label: `Current value: ${this.actualPrice}`,
+              pointRadius: 7,
+              pointHoverRadius: 10,
+              backgroundColor: "#BEE0FF",
+              borderColor: "#DA7500",
+              borderWidth: 3,
+              fill: false,
+            },
           ],
         },
         options: {
           responsive: true,
           scales: {
-            xAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: "Hour",
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Hour",
+                },
               },
-            }],
-            yAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: "Price",
+            ],
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Price",
+                },
               },
-            }],
+            ],
           },
           title: {
             display: true,
@@ -63,16 +70,16 @@ export default {
     setData(id) {
       // Guardamos la moneda a graficar
       this.coins.forEach((coin) => {
-        if (coin.uuid === id) { this.coin = coin; }
+        if (coin.uuid === id) {
+          this.coin = coin;
+        }
       });
       // Guardamos los valores de la moneda
       const sparklines = [...this.coin.sparkline];
       this.coinSparklines = sparklines.map((spark) => parseFloat(spark));
-
       // Reducimos los valores obtenidos a formato 24 h
       const reduceAmount = this.coinSparklines.length - 24;
       this.coinSparklines = this.coinSparklines.slice(reduceAmount);
-
       // Seteamos valores de label y actual price
       this.labels = this.coinSparklines.map((spark, index) => index.toString());
       this.actualPrice = parseFloat(this.coin.price).toFixed(2);
@@ -81,7 +88,7 @@ export default {
   computed: {
     ...mapState(["id", "coins"]),
   },
-  mounted () {
+  mounted() {
     this.setData(this.id);
     this.buildChart();
   },
@@ -90,9 +97,5 @@ export default {
 <style lang="postcss">
 #chart {
   @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl;
-  /* will-change: transform; */
 }
-/* #chart:hover {
-transform: translate3d(150px, 100px, 0);
-} */
 </style>

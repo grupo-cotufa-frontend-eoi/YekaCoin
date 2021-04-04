@@ -2,14 +2,17 @@
   <div class="card-coin">
     <router-link
       class="w-full h-full"
-      :to="{ name: 'Coin', params: { id: coin.uuid, nameCoin: coin.name } }"
+      :to="{
+        name: 'CoinChart',
+        params: { id: coin.uuid, nameCoin: coin.name },
+      }"
     >
       <div class="infocard" @click="filterCoinID(coin.uuid)">
         <div class="card-content">
           <img
             class="card-content__img"
             :src="coin.iconUrl"
-            :alt="`image de criptmoneda de ${coin.name}`"
+            :alt="`${coin.name} image`"
           />
           <span class="card-content__text">{{ coin.name }}</span>
           <span class="card-content__text uppercase">{{ coin.symbol }}</span>
@@ -18,9 +21,7 @@
           <span class="card-content__text uppercase"
             >${{ parseFloat(coin.price).toFixed(2) }}</span
           >
-          <span
-            class="card-content__text uppercase"
-            :class="changeColor"
+          <span class="card-content__text uppercase" :class="changeColor"
             >{{ coin.change.substring(0, 1) === "-" ? "" : "+"
             }}{{ parseFloat(coin.change).toFixed(2) }}%</span
           >
@@ -73,7 +74,6 @@ export default {
         /* "text-red-500": change.substring(0, 1) === "-", */
         "text-red-500": this.coin.change.substring(0, 1) === "-",
         "text-green-500": this.coin.change.substring(0, 1) !== "-",
-
       };
     },
   },
@@ -82,30 +82,29 @@ export default {
 
 <style lang="postcss">
 .card-coin {
-
-  @apply grid grid-cols-18 mb-2 h-20 w-11/12
+  @apply grid grid-cols-18 mb-2 max-h-24 sm:h-20 w-11/12
        border-marine bg-white hover:bg-primary
          border-2 rounded-md shadow-lg;
   transition: transform 0.2s;
-  & .infocard {
-    @apply grid grid-cols-2 w-full h-full ;
 
-    & .card-change  {
-      @apply flex flex-col md:flex-row md:justify-around lg:justify-evenly md:items-center h-full lg:mx-5
+  & .infocard {
+    @apply grid grid-cols-2 w-full h-full;
+
+    & .card-change {
+      @apply flex flex-col md:flex-row md:justify-around lg:justify-evenly md:items-center h-full lg:mx-5 height:justify-around;
     }
 
     & .card-content {
-    @apply flex flex-col md:flex-row md:justify-between md:items-center h-full lg:mx-5 p-2;
+      @apply flex flex-col md:flex-row md:justify-between md:items-center h-full lg:mx-5 p-2;
 
-    & .card-content__img {
-      @apply hidden md:h-8 md:w-8 tablet:h-12 tablet:w-12 md:block;
-    }
+      & .card-content__img {
+        @apply hidden md:h-8 md:w-8 tablet:h-12 tablet:w-12 md:block;
+      }
 
-    & .card-content__text {
-      @apply text-lg sm:text-xl;
+      & .card-content__text {
+        @apply text-lg sm:text-xl height:text-2xl;
+      }
     }
-    }
-
   }
 }
 

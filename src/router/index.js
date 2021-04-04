@@ -32,13 +32,13 @@ const routes = [
   },
   {
     path: "/coin/:nameCoin",
-    name: "Coin",
+    name: "CoinChart",
     /*
      * Route level code-splitting
      * this generates a separate chunk (about.[hash].js) for this route
      * which is lazy-loaded when the route is visited.
      */
-    component: () => import(/* WebpackChunkName: "about" */ "../views/Coin"),
+    component: () => import(/* WebpackChunkName: "about" */ "../views/CoinChart"),
   },
   {
     path: "/favorite",
@@ -49,6 +49,16 @@ const routes = [
      * which is lazy-loaded when the route is visited.
      */
     component: () => import(/* WebpackChunkName: "about" */ "../views/Favorite"),
+  },
+  {
+    path: "/comparison-chart",
+    name: "ComparisonChart",
+    /*
+     * Route level code-splitting
+     * this generates a separate chunk (about.[hash].js) for this route
+     * which is lazy-loaded when the route is visited.
+     */
+    component: () => import(/* WebpackChunkName: "about" */ "../views/ComparisonChart"),
   },
 
 ];
