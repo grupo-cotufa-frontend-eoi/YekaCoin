@@ -71,7 +71,6 @@ export default {
     ...mapState(["id", "favorite"]),
     changeColor() {
       return {
-        /* "text-red-500": change.substring(0, 1) === "-", */
         "text-red-500": this.coin.change.substring(0, 1) === "-",
         "text-green-500": this.coin.change.substring(0, 1) !== "-",
       };

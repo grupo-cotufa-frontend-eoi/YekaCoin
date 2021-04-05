@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import NewsCard from "../components/NewsCard";
+import NewsCard from "../components/newsCard/NewsCard";
 export default {
   name: "News",
   components: {

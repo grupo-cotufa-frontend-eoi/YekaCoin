@@ -1,21 +1,25 @@
 <template>
-<div class="container">
-  <div class="coins-title">
-    <h1>Cryptocurrency</h1>
-    <h1>Value</h1>
-    <h1>Change</h1>
-    <h1>Favorite</h1>
+  <div class="container">
+    <div class="coins-title">
+      <h1>Cryptocurrency</h1>
+      <h1>Value</h1>
+      <h1>Change</h1>
+      <h1>Favorite</h1>
+    </div>
+    <div class="coins-container" v-if="favoriteCoin.length !== 0">
+      <CoinCard
+        v-on:onClick="addFavorite"
+        v-for="coin of this.favoriteCoin"
+        :key="coin.uuid"
+        :coin="coin"
+      ></CoinCard>
+    </div>
+    <h1 v-else>hola</h1>
   </div>
-  <div class="coins-container" v-if="favoriteCoin.length !==0" >
-    <CoinCard v-on:onClick="addFavorite" v-for="coin of this.favoriteCoin" :key="coin.uuid" :coin="coin" ></CoinCard>
-  </div>
-  <h1 v-else>hola</h1>
-</div>
-
 </template>
 
 <script>
-import CoinCard from "../components/CoinCard";
+import CoinCard from "../components/coinCard/CoinCard";
 import { mapState, mapActions } from "vuex";
 export default {
   name: "Coins",
@@ -29,27 +33,29 @@ export default {
   },
   methods: {
     ...mapActions(["saveFavorite"]),
-    async addFavorite () {
+    async addFavorite() {
       this.favoriteCoin = [];
-      await Promise.all(this.coins.forEach(async (element) => {
-        this.favorite.forEach(async (coin) => {
-          if (element.uuid === coin) {
-            this.favoriteCoin.push(element);
-          }
-        });
-      }));
+      await Promise.all(
+        this.coins.forEach(async (element) => {
+          this.favorite.forEach(async (coin) => {
+            if (element.uuid === coin) {
+              this.favoriteCoin.push(element);
+            }
+          });
+        })
+      );
     },
   },
   computed: {
     ...mapState(["coins", "favorite"]),
   },
 
-  async created () {
-    if (this.favorite.length > 0) { await this.addFavorite(); }
+  async created() {
+    if (this.favorite.length > 0) {
+      await this.addFavorite();
+    }
   },
-
 };
-
 </script>
 
 <style lang="postcss">
@@ -62,5 +68,4 @@ export default {
     @apply flex flex-col justify-center items-center w-full h-full;
   }
 }
-
 </style>

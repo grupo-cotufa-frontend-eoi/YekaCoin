@@ -77,7 +77,7 @@ module.exports = {
     "dot-location": ["error"],
     eqeqeq: ["error", "always"],
     "no-new-func": ["error"],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["off"],
   },
   overrides: [
     {

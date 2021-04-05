@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CoinCard from "../components/CoinCard";
+import CoinCard from "../components/coinCard/CoinCard";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Coins",

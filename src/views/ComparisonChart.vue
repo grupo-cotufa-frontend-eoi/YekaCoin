@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DoubleChart from "../components/DoubleChart";
+import DoubleChart from "../components/doubleChart/DoubleChart";
 export default {
   name: "ComparisonChart",
   components: {

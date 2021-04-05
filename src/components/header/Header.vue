@@ -4,7 +4,7 @@
     <div class="logo-container">
       <img
         class="object-contain"
-        src="../assets/logo.png"
+        src="../../assets/logo.png"
         alt="YekaCoin Logo"
       />
     </div>
@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import LogoLetters from "../components/LogoLetters";
-import NavButton from "../components/NavButton";
+import LogoLetters from "../logoLetters/LogoLetters.vue";
+import NavButton from "../navButton/NavButton.vue";
 export default {
   name: "Header",
   components: {

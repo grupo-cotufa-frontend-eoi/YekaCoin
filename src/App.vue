@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import Header from "../src/components/Header";
-import SideMenu from "../src/components/SideMenu";
-import ContentSection from "./components/ContentSection.vue";
+import Header from "../src/components/header/Header";
+import SideMenu from "../src/components/sideMenu/SideMenu";
+import ContentSection from "../src/components/contentSection/ContentSection";
 export default {
   name: "App",
   components: {
