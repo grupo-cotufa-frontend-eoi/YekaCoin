@@ -1,5 +1,5 @@
 <template>
-  <button class="side-menu-button" :aria-label="label.view">
+  <button class="side-menu-button">
     <slot></slot>
   </button>
 </template>
