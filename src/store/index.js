@@ -11,9 +11,9 @@ export default new Vuex.Store({
   },
   mutations: {
     async getCoins(state) {
-      const url = await fetch("https://api.coinranking.com/v2/coins?limit=10");
-      const vista = await url.json();
-      state.coins = vista.data.coins;
+      const url = require("../../public/coins.json");
+      const vista = url.data.coins;
+      state.coins = vista;
     },
     setID(state, id) {
       state.id = id;
