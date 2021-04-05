@@ -27,7 +27,7 @@
 <script>
 import { mapActions, mapState } from "vuex";
 import Comparer from "../components/Comparer";
-import BubbleCoin from "../components/BubbleCoin";
+import BubbleCoin from "../components/bubbleCoin/BubbleCoin";
 export default {
   name: "Home",
   components: {

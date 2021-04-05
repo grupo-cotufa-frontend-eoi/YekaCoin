@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import SideMenuButton from "../components/SideMenuButton";
+import SideMenuButton from "../components/sideMenuButton/SideMenuButton";
 export default {
   name: "SideMenu",
   components: {

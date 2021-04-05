@@ -1,6 +1,6 @@
 <template>
   <div class="bubble">
-    <img class="bubble-image" :src="coin.iconUrl" alt="" />
+    <img class="bubble-image" :src="coin.iconUrl" alt="Bubble image" />
     <h1 class="bubble-text">
       <span class="bubble-text__symbol">{{ coin.symbol }}</span>
       <span class="bubble-text__price"
@@ -33,6 +33,7 @@ export default {
   & .bubble-image {
     @apply h-14 w-14;
   }
+
   & .bubble-text {
     @apply grid grid-rows-2;
   }
