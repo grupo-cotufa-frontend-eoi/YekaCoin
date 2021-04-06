@@ -1,5 +1,5 @@
 <template>
-  <canvas id="chart" width="1000" height="500">Your navigator doesn't allow graphics</canvas>
+  <canvas id="chart" width="1000" height="500" class="grafic">Your navigator doesn't allow graphics</canvas>
 </template>
 
 <script>
@@ -89,8 +89,9 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl;
-  /* will-change: transform; */
+  @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl max-h-full max-w-full;
+
+  /* will-change: t-ransform; */
 }
 /* #chart:hover {
 transform: translate3d(150px, 100px, 0);

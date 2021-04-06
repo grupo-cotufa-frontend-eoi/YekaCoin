@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full relative">
+  <div class="w-full h-full">
     <Header/>
     <div class="flex w-full flex-col tablet:flex-row ">
         <!-- Dentro del side menu están todas las rutas -->
