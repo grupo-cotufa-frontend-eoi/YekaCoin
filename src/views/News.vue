@@ -32,47 +32,22 @@ export default {
 };
 </script>
 <style lang="postcss">
-/* .news-container {
-  @apply text-center w-auto sm:grid sm:grid-cols-2;
-
+.gridywrap {
   & .news-title {
-    @apply text-4xl font-semibold col-span-2 my-5;
+    @apply text-center text-4xl font-semibold col-span-2 my-5;
   }
-} */
-html body * {
-  /* @apply box-border; */
-  box-sizing: border-box;
-  /* font-family: "Open Sans", Arial, sans-serif; */
-}
-.gridywrap div[class*="gridy"] {
-  background: #eee;
-  box-shadow: inset 0 0 0 1px #ddd;
-  padding: 1rem;
-  float: left;
-  position: relative;
-}
-.gridywrap .gridy-1,
-.gridywrap .gridy-2,
-.gridywrap .gridy-3 {
-  width: 320px;
-  overflow: hidden;
-}
 
-.gridywrap .gridy-1 {
-  width: 100%;
-}
-.gridywrap .gridy-2 {
-  width: 100%;
-}
-.gridywrap .gridy-3 {
-  width: 100%;
-}
+  & div[class*="gridy"] {
+    @apply bg-turquoise p-2 float-left relative border-2;
+  }
 
-.gridywrap .gridyhe-1 {
-  height: 320px;
-}
-.gridywrap .gridyhe-2 {
-  height: 320px;
+  & .gridy-1 {
+    @apply w-full overflow-hidden;
+  }
+
+  & .gridyhe-2 {
+    height: 320px;
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -85,22 +60,10 @@ html body * {
   .gridywrap .gridy-1 {
     width: 50%;
   }
-  .gridywrap .gridy-2 {
-    width: 50%;
-  }
-  .gridywrap .gridy-3 {
-    width: 100%;
-  }
 }
 @media screen and (min-width: 1024px) {
   .gridywrap .gridy-1 {
     width: 33.3%;
-  }
-  .gridywrap .gridy-2 {
-    width: 66.6%;
-  }
-  .gridywrap .gridy-3 {
-    width: 100%;
   }
   .gridywrap .gridyhe-2 {
     height: 640px;
@@ -109,135 +72,69 @@ html body * {
 
 /*styling*/
 .gridywrap .gridimg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  background-position: center center;
-  background-size: cover;
+  @apply absolute top-0 left-0 right-0 bottom-0 overflow-hidden bg-center bg-cover;
 }
 .gridywrap .gridimg img {
-  width: 100%;
+  @apply w-full;
 }
 .gridywrap .gridinfo {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.4);
-  text-align: center;
-  transition: all 0.8s;
+  @apply absolute w-full h-full top-0 left-0 text-center transition-all duration-1000 bg-black bg-opacity-40;
 }
 .gridywrap .gridinfo h3 {
-  font-size: 24px;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 130px 0 20px;
-  position: relative;
+  @apply text-xl text-white font-bold uppercase mt-56 mb-5 relative;
 }
 .gridywrap .gridinfo h3:after {
+  @apply w-6 block my-0 mx-auto mt-6 border-t-4 border-white;
   content: "";
-  width: 25px;
-  border-top: 4px solid #fff;
-  display: block;
-  margin: 0 auto;
-  margin-top: 25px;
 }
 .gridywrap .gridinfo .gridmeta {
-  transition-delay: 0.25s;
+  @apply delay-300;
 }
 .gridywrap .gridinfo .gridmeta p {
-  display: inline-block;
-  font-size: 13px;
-  color: #fff;
-  margin-bottom: 15px;
+  @apply inline-block text-sm text-white mb-4;
 }
 .gridywrap .gridinfo .gridmeta p i {
-  margin-right: 5px;
+  @apply mr-2;
 }
 .gridywrap .gridinfo .gridmeta p.gridwho {
-  margin-left: 25px;
+  @apply ml-7;
 }
 .gridywrap .gridinfo p.gridexerpt {
-  width: 60%;
-  margin: 0 auto;
-  line-height: 22px;
-  margin-bottom: 25px;
-  color: #fff;
-  transition-delay: 0.5s;
+  @apply w-3/5 my-0 mx-auto mb-6 leading-tight text-white delay-500;
 }
 
 .gridywrap .gridinfo * {
-  opacity: 0;
-  transition: all 0.8s;
+  @apply opacity-0 transition-all duration-700;
 }
 .gridywrap .gridinfo h3 {
-  opacity: 1;
+  @apply opacity-100;
 }
 .gridywrap .gridinfo .grid-btn {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 auto;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  border-radius: 25px;
-  border: 1px solid #fff;
-  display: block;
-  overflow: hidden;
+  @apply block overflow-hidden text-white no-underline my-0 mx-auto w-9 h-9 leading-tight border-2 border-white rounded-full;
 }
 .gridywrap .gridinfo .grid-btn:hover {
-  width: 75px;
-  background: rgba(0, 0, 0, 0.3);
+  @apply w-16 bg-black opacity-30;
 }
 .gridywrap .gridinfo .grid-btn span {
-  opacity: 0;
-  display: none;
-  transition: opacity 0.8s;
+  @apply opacity-0 hidden transition-opacity duration-700;
 }
 .gridywrap .gridinfo .grid-btn:hover span {
-  opacity: 1;
-  display: inline;
+  @apply opacity-100 inline;
 }
 .gridywrap .gridinfo .grid-btn:hover i {
-  opacity: 0;
-  display: none;
+  @apply hidden opacity-0;
 }
 
 .gridywrap .gridinfo:hover * {
-  opacity: 0.7;
+  @apply opacity-70;
 }
 .gridywrap .gridinfo:hover p {
-  opacity: 1;
+  @apply opacity-100;
 }
 .gridywrap .gridinfo:hover {
-  background: rgba(158, 12, 73, 0.7);
+  @apply bg-marine bg-opacity-70;
 }
 .gridywrap .gridinfo:hover h3 {
-  margin-top: 70px;
-  opacity: 1;
-}
-
-.intro {
-  text-align: center;
-  padding: 25px;
-  background: #111;
-  color: #ddd;
-}
-h1 {
-  font-size: 48px;
-  font-weight: 300;
-  padding: 15px 0;
-}
-.intro p {
-  opacity: 0.5;
-  font-size: 12px;
-}
-.intro p a {
-  color: #fa8cd3;
+  @apply mt-16 opacity-100;
 }
 </style>

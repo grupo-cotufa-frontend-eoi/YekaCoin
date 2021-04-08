@@ -1,5 +1,5 @@
 <template>
-  <div class="gridy-1 gridyhe-2">
+  <div class="card gridy-1 gridyhe-2">
     <div class="gridimg"><img :src="item.image_url" alt="" /></div>
 
     <div class="gridinfo">
@@ -31,7 +31,3 @@ export default {
   },
 };
 </script>
-
-<style lang="postcss">
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
-</style>
