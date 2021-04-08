@@ -1,5 +1,5 @@
 <template>
-  <button class="side-menu-button">
+  <button role="button" class="side-menu-button">
     <slot></slot>
   </button>
 </template>
@@ -7,11 +7,6 @@
 <script>
 export default {
   name: "SideMenuButton",
-  props: {
-    label: {
-      view: String,
-    },
-  },
 };
 </script>
 <style lang="postcss">

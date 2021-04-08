@@ -2,7 +2,12 @@
   <div class="container">
     <div class="selectors">
       <div class="selector">
-        <select @change="setData" class="first-coin" v-model="first">
+        <select
+          data-testid="first-select"
+          @change="setData"
+          class="first-coin"
+          v-model="first"
+        >
           <option v-for="coin of this.coins" :key="coin.uuid" :value="coin">
             {{ coin.name }}
           </option>
@@ -23,14 +28,21 @@
         />
       </svg>
       <div class="selector">
-        <select @change="setData" class="second-coin" v-model="second">
+        <select
+          data-testid="second-select"
+          @change="setData"
+          class="second-coin"
+          v-model="second"
+        >
           <option v-for="coin of this.coins" :key="coin.uuid" :value="coin">
             {{ coin.name }}
           </option>
         </select>
       </div>
     </div>
-    <canvas id="chart">Your navigator doesn't allow graphics</canvas>
+    <canvas data-testid="canvas" id="chart"
+      >Your navigator doesn't allow graphics</canvas
+    >
   </div>
 </template>
 

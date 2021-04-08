@@ -1,12 +1,11 @@
 
 import SideMenuButton from "../SideMenuButton.vue";
 import { render, screen } from "@testing-library/vue";
+import "@testing-library/jest-dom";
 
 describe("SideMenuButton", () => {
-  it("An instance of SideMenuButton on Home view should be defined", () => {
+  it("An instance of SideMenuButton should be rendered on the document", () => {
     render(SideMenuButton);
-
-    const button = screen.getByRole("button");
-    expect(button).toBeDefined();
+    expect(screen.getByRole("button")).toBeInTheDocument();
   });
 });
