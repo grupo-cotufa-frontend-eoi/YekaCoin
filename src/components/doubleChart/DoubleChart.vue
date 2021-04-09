@@ -82,18 +82,16 @@ export default {
       this.setData();
     },
     setData() {
-      const firstSparks = [...this.first.sparkline];
-      const firstSparklines = firstSparks.map((spark) => parseFloat(spark));
+      const firstSparklines = this.first.sparkline.map((spark) => parseFloat(spark));
       this.sparklines[0] = firstSparklines.slice(firstSparklines.length - 24);
-      const secondSparks = [...this.second.sparkline];
-      const secondSparklines = secondSparks.map((spark) => parseFloat(spark));
+      const secondSparklines = this.second.sparkline.map((spark) => parseFloat(spark));
       this.sparklines[1] = secondSparklines.slice(secondSparklines.length - 24);
       this.prices[0] = parseFloat(this.first.price).toFixed(2);
       this.prices[1] = parseFloat(this.second.price).toFixed(2);
-      this.calculateMaxLimit(this.sparklines[0], this.sparklines[1]);
+      this.calculateMaxLimit(this.sparklines);
       this.buildChart();
     },
-    calculateMaxLimit(firstPrices, secondPrices) {
+    calculateMaxLimit([firstPrices, secondPrices]) {
       const firstMax = Math.max(...firstPrices);
       const secondMax = Math.max(...secondPrices);
       this.maxLimit = firstMax > secondMax ? firstMax : secondMax;

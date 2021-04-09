@@ -1,11 +1,9 @@
 <template>
   <div class="container">
-    <div class="coins-title">
-      <h1>Cryptocurrency</h1>
-      <h1>Value</h1>
-      <h1>Change</h1>
-      <h1>Favorite</h1>
+    <div class="text-center my-6 text-4xl font-semibold">
+      <h2>Your favorite coins</h2>
     </div>
+    <Title />
     <div class="coins-container" v-if="favoriteCoin.length !== 0">
       <CoinCard
         v-on:onClick="addFavorite"
@@ -14,13 +12,16 @@
         :coin="coin"
       ></CoinCard>
     </div>
-    <h1 v-else>hola</h1>
+    <Warning v-else />
   </div>
 </template>
 
 <script>
 import CoinCard from "../components/coinCard/CoinCard";
+import Warning from "../components/warning/Warning";
+import Title from "../components/title-coin/Title-coin";
 import { mapState, mapActions } from "vuex";
+
 export default {
   name: "Coins",
   data() {
@@ -30,29 +31,29 @@ export default {
   },
   components: {
     CoinCard,
+    Warning,
+    Title
   },
   methods: {
     ...mapActions(["saveFavorite"]),
-    async addFavorite() {
+    addFavorite() {
       this.favoriteCoin = [];
-      await Promise.all(
-        this.coins.forEach(async (element) => {
-          this.favorite.forEach(async (coin) => {
-            if (element.uuid === coin) {
-              this.favoriteCoin.push(element);
-            }
-          });
-        })
-      );
+      this.coins.forEach((element) => {
+        this.favorite.forEach((coin) => {
+          if (element.uuid === coin) {
+            this.favoriteCoin.push(element);
+          }
+        });
+      });
     },
   },
   computed: {
     ...mapState(["coins", "favorite"]),
   },
 
-  async created() {
+  created() {
     if (this.favorite.length > 0) {
-      await this.addFavorite();
+      this.addFavorite();
     }
   },
 };
@@ -60,9 +61,6 @@ export default {
 
 <style lang="postcss">
 .container {
-  & .coins-title {
-    @apply flex justify-around mb-6 font-extrabold;
-  }
 
   & .coins-container {
     @apply flex flex-col justify-center items-center w-full h-full;

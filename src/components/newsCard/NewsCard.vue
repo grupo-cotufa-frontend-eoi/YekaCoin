@@ -4,12 +4,12 @@
       {{ item.title }}
     </div>
     <div class="article-img">
-      <img class="article-content__img" :src="item.image_url" alt="" />
+      <img class="article-content__img" role="image"  :src="item.image_url" :alt="item.date" />
     </div>
     <div class="article-content">
       <div class="primary-content">
         <p class="primary-content__abstract__title">Abstract</p>
-        <p class="primary-content__abstract__text">{{ item.text }}</p>
+        <p class="primary-content__abstract__text" aria-label="noticia">{{ item.text }}</p>
       </div>
       <div class="extra-content">
         <p class="extra-content__source">
