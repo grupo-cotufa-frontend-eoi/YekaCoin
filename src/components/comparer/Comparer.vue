@@ -92,7 +92,7 @@ export default {
   computed: {
     ...mapState(["coins"]),
   },
-  beforeMount () {
+  beforeMount() {
     if (Object.keys(this.leftCoin).length === 0) {
       this.setDefaultValues();
     }
@@ -132,5 +132,8 @@ export default {
 }
 .logo {
   @apply h-9 w-9;
+}
+select {
+  @apply bg-gradientFirst rounded-xl;
 }
 </style>

@@ -94,9 +94,13 @@ export default {
       this.setData();
     },
     setData() {
-      const firstSparklines = this.first.sparkline.map((spark) => parseFloat(spark));
+      const firstSparklines = this.first.sparkline.map((spark) =>
+        parseFloat(spark)
+      );
       this.sparklines[0] = firstSparklines.slice(firstSparklines.length - 24);
-      const secondSparklines = this.second.sparkline.map((spark) => parseFloat(spark));
+      const secondSparklines = this.second.sparkline.map((spark) =>
+        parseFloat(spark)
+      );
       this.sparklines[1] = secondSparklines.slice(secondSparklines.length - 24);
       this.prices[0] = parseFloat(this.first.price).toFixed(2);
       this.prices[1] = parseFloat(this.second.price).toFixed(2);
@@ -194,7 +198,7 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-turquoise border-2 border-marine shadow-lg rounded-xl;
+  @apply bg-gradient-to-tr from-gradientFirst to-gradientSecond border-2 border-marine shadow-lg rounded-xl;
 }
 .container {
   & .selectors {
@@ -204,7 +208,7 @@ export default {
       @apply flex flex-col;
 
       & select {
-        @apply mx-5 bg-marine h-8;
+        @apply mx-5 bg-gradientFirst h-8 rounded-xl;
       }
     }
 

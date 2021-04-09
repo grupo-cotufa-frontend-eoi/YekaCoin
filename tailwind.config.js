@@ -11,7 +11,7 @@ module.exports = {
       },
       boxShadow: {
         lg: "5px 5px 0px #a5c3de, -5px -5px 0px #d7fdff",
-        md: "5px 5px 0px #e0d0b7, -5px -5px 0px #ffffe9",
+        md: "5px 5px 0px #e0d0b7, 0px 0px 0px #ffffe9",
         bubble: "-5px -5px 0px #2d665f, 5px 5px 0px #b3ffff",
       },
       colors: {
@@ -25,6 +25,8 @@ module.exports = {
         indigo: colors.indigo,
         yellow: colors.amber,
         grey: colors.coolGray,
+        gradientFirst: "#e8a9b0",
+        gradientSecond: "#96b8d4",
       },
       gridTemplateColumns: {
         16: "90% 10%",

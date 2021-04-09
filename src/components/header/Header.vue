@@ -12,22 +12,14 @@
     <div class="header-letters">
       <LogoLetters></LogoLetters>
     </div>
-    <!-- Zona de botones -->
-    <div>
-      <NavButton>Login</NavButton>
-      <NavButton>Register</NavButton>
-      <!-- Aqui iria un componente con el icono del usuario, clickable, para desloguear -->
-    </div>
   </header>
 </template>
 
 <script>
 import LogoLetters from "../logoLetters/LogoLetters.vue";
-import NavButton from "../navButton/NavButton.vue";
 export default {
   name: "Header",
   components: {
-    NavButton,
     LogoLetters,
   },
 };
@@ -44,6 +36,7 @@ export default {
   }
 
   & .header-letters {
+    @apply mr-40;
     transition: transform 0.2s;
   }
 
