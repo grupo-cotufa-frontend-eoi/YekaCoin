@@ -74,9 +74,7 @@ export default {
           this.coin = coin;
         }
       });
-      // Guardamos los valores de la moneda
-      const sparklines = [...this.coin.sparkline];
-      this.coinSparklines = sparklines.map((spark) => parseFloat(spark));
+      this.coinSparklines = this.coin.sparkline.map((spark) => parseFloat(spark));
       // Reducimos los valores obtenidos a formato 24 h
       const reduceAmount = this.coinSparklines.length - 24;
       this.coinSparklines = this.coinSparklines.slice(reduceAmount);
@@ -96,6 +94,6 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl;
+  @apply bg-yellow-50 border-2 border-orange shadow-md rounded-xl max-w-full;
 }
 </style>

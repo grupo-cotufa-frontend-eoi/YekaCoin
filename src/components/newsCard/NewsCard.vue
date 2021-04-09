@@ -1,7 +1,6 @@
 <template>
   <div class="card gridy-1 gridyhe-2">
     <div class="gridimg"><img :src="item.image_url" alt="" /></div>
-
     <div class="gridinfo">
       <h3>{{ item.title }}</h3>
       <div class="gridmeta">

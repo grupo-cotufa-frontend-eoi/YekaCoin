@@ -1,11 +1,9 @@
 <template>
   <div class="container height:w-11/12 mx-auto">
-    <div class="coins-title">
-      <h1>Cryptocurrency</h1>
-      <h1>Value</h1>
-      <h1>Change</h1>
-      <h1>Favorite</h1>
+    <div class="text-center my-6 text-4xl font-semibold">
+      <h2>List of Coins</h2>
     </div>
+    <Title />
     <div class="coins-container">
       <CoinCard
         v-for="coin of this.coins"
@@ -18,11 +16,14 @@
 
 <script>
 import CoinCard from "../components/coinCard/CoinCard";
+import Title from "../components/title-coin/Title-coin";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Coins",
   components: {
     CoinCard,
+    Title
+
   },
   methods: {
     ...mapActions(["saveFavorite"]),
@@ -41,9 +42,6 @@ export default {
 
 <style lang="postcss">
 .container {
-  & .coins-title {
-    @apply flex justify-around mb-6 font-extrabold;
-  }
   & .coins-container {
     @apply flex flex-col items-center w-full h-full;
   }
