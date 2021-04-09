@@ -43,7 +43,7 @@
             </td>
           </tr>
           <tr class="table-content">
-            <td class="flex justify-center">
+            <td class="flex justify-center py-4">
               <select v-model="rightCoin">
                 <option
                   v-for="coin of this.coins"
@@ -86,13 +86,13 @@ export default {
   methods: {
     setDefaultValues() {
       this.leftCoin = this.coins[0];
-      this.rightCoin = this.coins[0];
+      this.rightCoin = this.coins[1];
     },
   },
   computed: {
     ...mapState(["coins"]),
   },
-  updated() {
+  beforeMount () {
     if (Object.keys(this.leftCoin).length === 0) {
       this.setDefaultValues();
     }
