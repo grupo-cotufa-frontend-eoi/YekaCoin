@@ -17,6 +17,8 @@ export default {
 
 <style lang="postcss">
 .comparison-title {
-  @apply text-4xl font-semibold text-center my-5;
+  @apply text-2xl font-semibold text-center my-6;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
+  font-family: "Press Start 2P";
 }
 </style>

@@ -51,7 +51,9 @@ export default {
   & .welcome-msg {
     @apply text-center w-full;
     & .welcome-msg__title {
-      @apply text-4xl font-semibold my-10;
+      @apply text-2xl font-semibold my-6;
+      text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
+      font-family: "Press Start 2P";
     }
     & .welcome-msg__text {
       @apply text-xl mb-4 font-medium;

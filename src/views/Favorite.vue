@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="text-center my-6 text-4xl font-semibold">
+    <div class="favorite-section__title">
       <h2>Your favorite coins</h2>
     </div>
     <Title />
@@ -32,7 +32,7 @@ export default {
   components: {
     CoinCard,
     Warning,
-    Title
+    Title,
   },
   methods: {
     ...mapActions(["saveFavorite"]),
@@ -61,6 +61,11 @@ export default {
 
 <style lang="postcss">
 .container {
+  & .favorite-section__title {
+    @apply text-center my-6 text-2xl font-semibold;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
+    font-family: "Press Start 2P";
+  }
 
   & .coins-container {
     @apply flex flex-col justify-center items-center w-full h-full;

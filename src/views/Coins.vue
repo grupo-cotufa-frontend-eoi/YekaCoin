@@ -1,6 +1,6 @@
 <template>
   <div class="container height:w-11/12 mx-auto">
-    <div class="text-center my-6 text-4xl font-semibold">
+    <div class="coins-section__title">
       <h2>List of Coins</h2>
     </div>
     <Title />
@@ -22,8 +22,7 @@ export default {
   name: "Coins",
   components: {
     CoinCard,
-    Title
-
+    Title,
   },
   methods: {
     ...mapActions(["saveFavorite"]),
@@ -42,6 +41,12 @@ export default {
 
 <style lang="postcss">
 .container {
+  & .coins-section__title {
+    @apply text-center my-6 text-2xl font-semibold;
+    text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
+    font-family: "Press Start 2P";
+  }
+
   & .coins-container {
     @apply flex flex-col items-center w-full h-full;
   }
