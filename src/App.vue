@@ -28,7 +28,19 @@ export default {
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Advent+Pro");
+@font-face {
+  font-family: "Advent Pro";
+  font-weight: normal;
+  font-style: normal;
+  src: url(./assets/fonts/advent-pro.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-weight: normal;
+  src: url(./assets/fonts/press-start-2p.woff2) format("woff2");
+}
 html {
   font-family: "Advent Pro", sans-serif;
   font-size: 1.2rem;

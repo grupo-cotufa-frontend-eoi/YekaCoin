@@ -56,14 +56,14 @@ export default {
       font-family: "Press Start 2P";
     }
     & .welcome-msg__text {
-      @apply text-xl mb-4 font-medium;
+      @apply text-2xl mb-4 font-semibold;
     }
   }
   & .bubbles-section {
     @apply flex flex-col justify-items-center items-center text-center font-medium m-10;
 
     & .bubbles-section__title {
-      @apply font-semibold;
+      @apply text-3xl font-extrabold;
     }
 
     & .bubbles-container {
