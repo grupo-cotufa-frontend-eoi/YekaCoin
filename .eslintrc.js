@@ -4,32 +4,32 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
-    '@vue/standard'
+    "plugin:vue/essential",
+    "@vue/standard"
   ],
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: "babel-eslint",
     ecmaVersion: 12,
     sourceType: "module",
   },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     "vue/max-len": ["error", {
-      "code": 600,
-      "template": 600,
-      "tabWidth": 2,
-      "comments": 0,
-      "ignorePattern": "",
-      "ignoreComments": false,
-      "ignoreTrailingComments": false,
-      "ignoreUrls": false,
-      "ignoreStrings": false,
-      "ignoreTemplateLiterals": false,
-      "ignoreRegExpLiterals": false,
-      "ignoreHTMLAttributeValues": false,
-      "ignoreHTMLTextContents": false,
+      code: 600,
+      template: 600,
+      tabWidth: 2,
+      comments: 0,
+      ignorePattern: "",
+      ignoreComments: false,
+      ignoreTrailingComments: false,
+      ignoreUrls: false,
+      ignoreStrings: false,
+      ignoreTemplateLiterals: false,
+      ignoreRegExpLiterals: false,
+      ignoreHTMLAttributeValues: false,
+      ignoreHTMLTextContents: false,
     }],
     indent: ["error", 2],
     semi: ["error", "always"],
@@ -82,12 +82,21 @@ module.exports = {
   overrides: [
     {
       files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+      ],
+      env: {
+        jest: true
+      }
+    },
+    {
+      files: [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
       ],
       env: {
         jest: true
       }
     }
   ]
-}
+};

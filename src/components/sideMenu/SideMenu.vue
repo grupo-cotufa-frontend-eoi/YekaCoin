@@ -1,7 +1,7 @@
 <template>
-  <div class="side-menu">
+  <div class="side-menu" data-testid="side-menu">
     <router-link to="/">
-      <SideMenuButton>
+      <SideMenuButton ariaLabel="Home">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -14,7 +14,7 @@
       </SideMenuButton>
     </router-link>
     <router-link to="/coins">
-      <SideMenuButton>
+      <SideMenuButton ariaLabel="Coins">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -32,7 +32,7 @@
       </SideMenuButton>
     </router-link>
     <router-link to="/favorite">
-      <SideMenuButton>
+      <SideMenuButton ariaLabel="Favorite">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -45,7 +45,7 @@
       </SideMenuButton>
     </router-link>
     <router-link to="/comparison-chart">
-      <SideMenuButton>
+      <SideMenuButton ariaLabel="ComparisonChart">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -60,7 +60,7 @@
       </SideMenuButton>
     </router-link>
     <router-link to="/news">
-      <SideMenuButton>
+      <SideMenuButton ariaLabel="News">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"

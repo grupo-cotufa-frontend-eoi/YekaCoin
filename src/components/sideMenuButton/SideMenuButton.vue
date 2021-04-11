@@ -1,5 +1,5 @@
 <template>
-  <button role="button" class="side-menu-button">
+  <button class="side-menu-button" :aria-label="ariaLabel">
     <slot></slot>
   </button>
 </template>
@@ -7,6 +7,9 @@
 <script>
 export default {
   name: "SideMenuButton",
+  props: {
+    ariaLabel: String,
+  },
 };
 </script>
 <style lang="postcss">
