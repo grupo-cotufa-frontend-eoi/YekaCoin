@@ -1,5 +1,5 @@
 <template>
-  <div class="h-auto flex flex-col items-center justify-center">
+  <div class="h-auto flex flex-col items-center justify-center text-white">
     <div class="compare-tool__header text-center">
       <div>¿Do you want to compare cryptocurrency statistics?</div>
     </div>
@@ -102,13 +102,14 @@ export default {
 
 <style lang="postcss">
 .compare-tool__header {
-  @apply text-center mb-4;
+  @apply text-white text-3xl font-extrabold text-center mb-6;
+  text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
 }
 .compare-tool__body {
   @apply bg-darkBlue border-2 border-marine w-auto rounded-xl shadow-md;
 }
 .table-body {
-  @apply bg-primary border-2 border-orange;
+  @apply bg-gradientFirst;
 }
 .text-table {
   @apply text-center;
@@ -134,6 +135,6 @@ export default {
   @apply h-9 w-9;
 }
 select {
-  @apply bg-gradientFirst rounded-xl;
+  @apply bg-gradientSecond shadow-xl rounded-xl;
 }
 </style>

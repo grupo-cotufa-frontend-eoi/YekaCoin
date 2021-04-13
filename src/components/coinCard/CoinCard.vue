@@ -82,7 +82,7 @@ export default {
 <style lang="postcss">
 .card-coin {
   @apply grid grid-cols-18 mb-2 max-h-24 sm:h-20 w-11/12
-       border-marine bg-white hover:bg-primary
+       border-marine bg-gradient-to-bl from-gradientFirst to-white hover:bg-primary
          border-2 rounded-md shadow-lg;
   transition: transform 0.2s;
 

@@ -1,5 +1,7 @@
-import SideMenu from "../SideMenu.vue";
-import { render, screen } from "@testing-library/vue";
+/*
+ * Import SideMenu from "../SideMenu.vue";
+ * import { render, screen } from "@testing-library/vue";
+ */
 import "@testing-library/jest-dom";
 
 describe("SideMenu Tests", () => {

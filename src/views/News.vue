@@ -34,13 +34,13 @@ export default {
 <style lang="postcss">
 .gridywrap {
   & .news-title {
-    @apply text-center text-2xl font-semibold col-span-2 my-6;
+    @apply text-white text-center text-2xl font-semibold col-span-2 my-6;
     text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
     font-family: "Press Start 2P";
   }
 
   & div[class*="gridy"] {
-    @apply bg-turquoise p-2 float-left relative border-2;
+    @apply bg-gradientFirst p-2 float-left relative border-2;
   }
 
   & .gridy-1 {

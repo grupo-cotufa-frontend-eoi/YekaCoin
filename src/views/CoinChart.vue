@@ -96,6 +96,6 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-gradient-to-tr from-gradientFirst to-gradientSecond border-2 border-marine shadow-lg rounded-xl max-w-full;
+  @apply bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl max-w-full;
 }
 </style>

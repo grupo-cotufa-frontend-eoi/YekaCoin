@@ -198,22 +198,22 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-gradient-to-tr from-gradientFirst to-gradientSecond border-2 border-marine shadow-lg rounded-xl;
+  @apply bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl;
 }
 .container {
   & .selectors {
     @apply flex justify-center items-end my-5;
 
     & .selector {
-      @apply flex flex-col;
+      @apply flex flex-col text-white;
 
       & select {
-        @apply mx-5 bg-gradientFirst h-8 rounded-xl;
+        @apply mx-5 bg-gradientFirst h-8 rounded-xl shadow-xl;
       }
     }
 
     & .arrows {
-      @apply h-8 w-8;
+      @apply h-8 w-8 text-white;
     }
   }
 

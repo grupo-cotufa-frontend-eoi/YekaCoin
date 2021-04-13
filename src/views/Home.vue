@@ -51,19 +51,20 @@ export default {
   & .welcome-msg {
     @apply text-center w-full;
     & .welcome-msg__title {
-      @apply text-2xl font-semibold my-6;
+      @apply text-white text-2xl font-semibold my-6;
       text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
       font-family: "Press Start 2P";
     }
     & .welcome-msg__text {
-      @apply text-2xl mb-4 font-semibold;
+      @apply text-white text-2xl mb-4 font-semibold;
     }
   }
   & .bubbles-section {
     @apply flex flex-col justify-items-center items-center text-center font-medium m-10;
 
     & .bubbles-section__title {
-      @apply text-3xl font-extrabold;
+      @apply text-white text-3xl font-extrabold;
+      text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
     }
 
     & .bubbles-container {
