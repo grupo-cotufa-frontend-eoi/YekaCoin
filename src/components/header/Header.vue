@@ -27,6 +27,10 @@ export default {
 };
 </script>
 <style lang="postcss">
+a.router-link-exact-active button {
+  @apply focus:outline-none focus:ring-0;
+}
+
 .header-container {
   @apply flex justify-between items-center mb-4
          h-24 px-1 py-1 md:px-2 md:py-2

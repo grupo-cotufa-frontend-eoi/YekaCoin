@@ -60,10 +60,21 @@ const routes = [
      */
     component: () => import(/* WebpackChunkName: "about" */ "../views/ComparisonChart"),
   },
+  {
+    path: "/*",
+    name: "Error404",
+    /*
+     * Route level code-splitting
+     * this generates a separate chunk (about.[hash].js) for this route
+     * which is lazy-loaded when the route is visited.
+     */
+    component: () => import(/* WebpackChunkName: "about" */ "../views/Error404"),
+  },
 
 ];
 
 const router = new VueRouter({
+  mode: "history",
   routes,
 });
 
