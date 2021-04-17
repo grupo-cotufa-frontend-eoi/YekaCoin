@@ -19,7 +19,7 @@
 <script>
 import CoinCard from "../components/coinCard/CoinCard";
 import Warning from "../components/warning/Warning";
-import Title from "../components/title-coin/Title-coin";
+import Title from "../components/title-coin/TitleCoin";
 import { mapState, mapActions } from "vuex";
 
 export default {
@@ -62,7 +62,7 @@ export default {
 <style lang="postcss">
 .container {
   & .favorite-section__title {
-    @apply text-white text-center my-6 text-2xl font-semibold;
+    @apply text-white text-center my-6 text-lg lg:text-xl xl:text-2xl font-semibold;
     text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
     font-family: "Press Start 2P";
   }

@@ -1,7 +1,5 @@
 <template>
-  <canvas id="chart" width="1000" height="500"
-    >Your navigator doesn't allow graphics</canvas
-  >
+  <canvas id="chart">Your navigator doesn't allow graphics</canvas>
 </template>
 
 <script>
@@ -96,6 +94,6 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl max-w-full;
+  @apply h-1/2 max-w-full bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl;
 }
 </style>

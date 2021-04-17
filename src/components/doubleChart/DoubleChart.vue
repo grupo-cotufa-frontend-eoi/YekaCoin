@@ -198,27 +198,32 @@ export default {
 </script>
 <style lang="postcss">
 #chart {
-  @apply bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl;
+  @apply max-w-full h-1/2 bg-gradient-to-bl from-gradientFirst to-white border-2 border-marine shadow-lg rounded-xl;
 }
 .container {
+  @apply flex justify-center items-center;
+
   & .selectors {
-    @apply flex justify-center items-end my-5;
+    @apply flex flex-col lg:flex-row justify-center items-end mb-4;
 
     & .selector {
       @apply flex flex-col text-white;
 
       & select {
-        @apply mx-5 bg-gradientFirst h-8 rounded-xl shadow-xl;
+        @apply mx-1 lg:mx-5 bg-gradientFirst h-8 rounded-xl shadow-xl;
       }
     }
 
     & .arrows {
-      @apply h-8 w-8 text-white;
+      @apply h-4 w-4 lg:h-8 lg:w-8 text-white self-center my-1 lg:my-0;
+      transform: rotate(90deg);
     }
-  }
 
-  & #chart {
-    @apply w-full h-1/2;
+    @media (min-width: 1024px) {
+      & .arrows {
+        transform: rotate(0);
+      }
+    }
   }
 }
 </style>

@@ -33,8 +33,10 @@ export default {
 </script>
 <style lang="postcss">
 .gridywrap {
+  @apply text-xs lg:text-base;
+
   & .news-title {
-    @apply text-white text-center text-2xl font-semibold col-span-2 my-6;
+    @apply text-white text-center text-lg lg:text-xl xl:text-2xl font-semibold col-span-2 my-6;
     text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
     font-family: "Press Start 2P";
   }
@@ -83,26 +85,26 @@ export default {
   @apply absolute w-full h-full top-0 left-0 text-center transition-all duration-1000 bg-black bg-opacity-40;
 }
 .gridywrap .gridinfo h3 {
-  @apply text-xl text-white font-bold uppercase mt-56 mb-5 relative;
+  @apply text-xs lg:text-xl text-white font-bold uppercase mt-0 lg:mt-56 mb-5 relative;
 }
 .gridywrap .gridinfo h3:after {
-  @apply w-6 block my-0 mx-auto mt-6 border-t-4 border-white;
+  @apply w-2 lg:w-6 block my-0 mx-auto mt-1 lg:mt-6 border-t-4 border-white;
   content: "";
 }
 .gridywrap .gridinfo .gridmeta {
   @apply delay-300;
 }
 .gridywrap .gridinfo .gridmeta p {
-  @apply inline-block text-sm text-white mb-4;
+  @apply inline-block text-sm text-white mb-0 lg:mb-4;
 }
 .gridywrap .gridinfo .gridmeta p i {
-  @apply mr-2;
+  @apply mr-0 lg:mr-2;
 }
 .gridywrap .gridinfo .gridmeta p.gridwho {
-  @apply ml-7;
+  @apply ml-0 lg:ml-7;
 }
 .gridywrap .gridinfo p.gridexerpt {
-  @apply w-3/5 my-0 mx-auto mb-6 leading-tight text-white delay-500;
+  @apply w-full lg:w-3/5 my-0 mx-auto mb-0 lg:mb-6 leading-tight text-white delay-500;
 }
 
 .gridywrap .gridinfo * {
