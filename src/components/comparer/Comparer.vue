@@ -15,8 +15,17 @@
             <th class="text-table">Price</th>
             <th class="text-table">Change</th>
           </tr>
+          <tr class="column-mobile">
+            <th class="text-table">Selection</th>
+            <th class="text-table">Rank</th>
+            <th class="text-table">Name</th>
+            <th class="text-table">Symbol</th>
+            <th class="text-table">Icon</th>
+            <th class="text-table">Price</th>
+            <th class="text-table">Change</th>
+          </tr>
         </thead>
-        <tbody class="table-body table-body pb-2">
+        <tbody class="table-body pb-2">
           <tr class="table-content">
             <td class="flex justify-center">
               <select v-model="leftCoin">
@@ -43,7 +52,7 @@
             </td>
           </tr>
           <tr class="table-content">
-            <td class="flex justify-center py-4">
+            <td class="flex justify-center py-0 md:py-4">
               <select v-model="rightCoin">
                 <option
                   v-for="coin of this.coins"
@@ -114,19 +123,59 @@ export default {
 .text-table {
   @apply text-center;
 }
+.column-mobile{
+  display: none;
+}
+
+@media (min-width: 764px)and (max-width: 792px){
+    td,th{
+    font-size:1.3rem
+  }
+}
 @media (max-width: 764px) {
+    select{
+    font-size: 1.1rem
+  }
+
+  td,th{
+    font-size:1.2rem
+  }
+/*   .table-responsive {
+    display: flex;
+    justify-content: space-around;
+  } */
+  .column-responsive,
+  .table-content{
+    display: flex;
+    justify-content:space-around
+  }
+/*   .table-body {
+    display: flex;
+    flex-direction: column
+  } */
+}
+
+@media (max-width: 615px){
+
   .table-responsive {
     display: flex;
     justify-content: space-around;
   }
-  .column-responsive,
+
   .table-content {
+    display: flex;
+   flex-direction:column;
+  }
+  thead,
+  tbody{
+    width: 50%;
+  }
+  .column-mobile,.column-responsive
+  {
     display: flex;
     flex-direction: column;
   }
-  .table-body {
-    display: flex;
-  }
+
 }
 .selected-coin {
   @apply text-xl text-center;

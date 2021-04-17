@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <Header />
-    <div class="flex w-full flex-col tablet:flex-row">
+    <div class="flex flex-col tablet:flex-row">
       <!-- Dentro del side menu están todas las rutas -->
       <SideMenu />
       <!-- Dentro de content section es donde está todo el contenido dinámico -->
