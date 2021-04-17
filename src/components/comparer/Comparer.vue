@@ -140,19 +140,11 @@ export default {
   td,th{
     font-size:1.2rem
   }
-/*   .table-responsive {
-    display: flex;
-    justify-content: space-around;
-  } */
   .column-responsive,
   .table-content{
     display: flex;
     justify-content:space-around
   }
-/*   .table-body {
-    display: flex;
-    flex-direction: column
-  } */
 }
 
 @media (max-width: 615px){
