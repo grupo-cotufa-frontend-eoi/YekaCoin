@@ -24,6 +24,11 @@ export default {
 <style lang="postcss">
 .content-section {
   @apply p-6 tablet:mr-10 flex mx-4 my-8
-         border-2 border-darkBlue shadow-lg rounded-xl md:w-full;
+         border-2 border-darkBlue shadow-lg rounded-xl;
+}
+@media (min-width: 768px) {
+  .content-section {
+    width: 95%;
+  }
 }
 </style>

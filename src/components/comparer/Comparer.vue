@@ -126,6 +126,9 @@ export default {
 .text-table {
   @apply text-center;
 }
+.table-responsive {
+  width: 100%;
+}
 .column-mobile {
   display: none;
 }
