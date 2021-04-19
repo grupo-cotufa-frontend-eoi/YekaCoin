@@ -95,5 +95,3 @@ export default {
          mx-4 tablet:px-4 tablet:py-7 tablet:mt-8 tablet:mx-2 tablet:flex-col max-h-72;
 }
 </style>
-
-/* tablet:flex hidden */

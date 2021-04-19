@@ -23,7 +23,7 @@ export default {
 
 <style lang="postcss">
 .coins-title {
-  @apply grid grid-cols-18 mb-6 font-extrabold text-white text-sm lg:text-xl xl:text-2xl;
+  @apply w-full grid grid-cols-18 mb-6 font-extrabold text-white text-sm lg:text-xl xl:text-2xl;
 }
 
 .coins-info {

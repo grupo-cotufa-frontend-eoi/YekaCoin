@@ -53,7 +53,17 @@ export default {
     height: 320px;
   }
 }
-
+@media screen and (min-width: 365px) {
+  .gridywrap .gridyhe-2 {
+    height: 320px;
+  }
+  .gridywrap {
+    width: 100%;
+  }
+  .gridywrap .gridy-1 {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 640px) {
   .gridywrap .gridyhe-2 {
     height: 320px;

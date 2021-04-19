@@ -25,7 +25,7 @@
             <th class="text-table">Change</th>
           </tr>
         </thead>
-        <tbody class="table-body pb-2">
+        <tbody class="table-body pb-2 round">
           <tr class="table-content">
             <td class="flex justify-center">
               <select v-model="leftCoin">
@@ -110,6 +110,9 @@ export default {
 </script>
 
 <style lang="postcss">
+.round {
+  @apply rounded-tr-xl;
+}
 .compare-tool__header {
   @apply text-white text-3xl font-extrabold text-center mb-6;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px blue;
@@ -123,32 +126,33 @@ export default {
 .text-table {
   @apply text-center;
 }
-.column-mobile{
+.column-mobile {
   display: none;
 }
 
-@media (min-width: 764px)and (max-width: 792px){
-    td,th{
-    font-size:1.3rem
+@media (min-width: 764px) and (max-width: 792px) {
+  td,
+  th {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 764px) {
-    select{
-    font-size: 1.1rem
+  select {
+    font-size: 1.1rem;
   }
 
-  td,th{
-    font-size:1.2rem
+  td,
+  th {
+    font-size: 1.2rem;
   }
   .column-responsive,
-  .table-content{
+  .table-content {
     display: flex;
-    justify-content:space-around
+    justify-content: space-around;
   }
 }
 
-@media (max-width: 615px){
-
+@media (max-width: 615px) {
   .table-responsive {
     display: flex;
     justify-content: space-around;
@@ -156,18 +160,17 @@ export default {
 
   .table-content {
     display: flex;
-   flex-direction:column;
+    flex-direction: column;
   }
   thead,
-  tbody{
+  tbody {
     width: 50%;
   }
-  .column-mobile,.column-responsive
-  {
+  .column-mobile,
+  .column-responsive {
     display: flex;
     flex-direction: column;
   }
-
 }
 .selected-coin {
   @apply text-xl text-center;
